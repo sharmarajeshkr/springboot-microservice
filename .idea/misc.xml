@@ -7,6 +7,9 @@
         <option value="$PROJECT_DIR$/2- Account MS - Docker/accounts/pom.xml" />
         <option value="$PROJECT_DIR$/1- Account MS with CRUD Operation/H2-DB/accounts/pom.xml" />
         <option value="$PROJECT_DIR$/1- Account MS with CRUD Operation/MYSQL-DB/accounts/pom.xml" />
+        <option value="$PROJECT_DIR$/0- MicroServices/cards/pom.xml" />
+        <option value="$PROJECT_DIR$/0- MicroServices/loans/pom.xml" />
+        <option value="$PROJECT_DIR$/0- MicroServices/accounts/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />

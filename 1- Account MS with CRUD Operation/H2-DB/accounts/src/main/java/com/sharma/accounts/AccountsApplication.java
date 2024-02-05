@@ -23,16 +23,16 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 				contact = @Contact(
 						name = "Rajesh Sharma",
 						email = "tutor@sharma.com",
-						url = "https://www.eazybytes.com"
+						url = "https://www.sharma.com"
 				),
 				license = @License(
 						name = "Apache 2.0",
-						url = "https://www.eazybytes.com"
+						url = "https://www.sharma.com"
 				)
 		),
 		externalDocs = @ExternalDocumentation(
 				description =  "EazyBank Accounts microservice REST API Documentation",
-				url = "https://www.eazybytes.com/swagger-ui.html"
+				url = "https://www.sharma.com/swagger-ui.html"
 		)
 )
 // ------------------------ Documentation End -----------------------//

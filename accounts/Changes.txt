@@ -1,0 +1,7 @@
+Annotation Added
+    1. @EnableConfigurationProperties(value = {AccountsContactInfoDto.class})
+Added New Class under dto package AccountsContactInfoDto.java of type record
+Changes in .yml
+Added Multiple .yml file
+Added Methods in AccountController.java
+Added 2 New request in postman.Collection file

@@ -96,6 +96,24 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "contact-info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/contact-info"
+					},
+					"response": []
+				},
+				{
+					"name": "build-info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/build-info"
+					},
+					"response": []
 				}
 			]
 		},

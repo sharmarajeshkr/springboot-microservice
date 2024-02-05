@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/2- Account MS - Docker/accounts/pom.xml" />
+        <option value="$PROJECT_DIR$/1- Account MS with CRUD Operation/H2-DB/accounts/pom.xml" />
+        <option value="$PROJECT_DIR$/1- Account MS with CRUD Operation/MYSQL-DB/accounts/pom.xml" />
+        <option value="$PROJECT_DIR$/0- MicroServices/cards/pom.xml" />
+        <option value="$PROJECT_DIR$/0- MicroServices/loans/pom.xml" />
+        <option value="$PROJECT_DIR$/0- MicroServices/accounts/pom.xml" />
+      </list>
+    </option>
+    <option name="workspaceImportForciblyTurnedOn" value="true" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

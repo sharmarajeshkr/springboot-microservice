@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd6bb089-4971-4a81-b050-4f7875652d0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/accounts/Changes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/sharma/accounts/dto/AccountsContactInfoDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/resources/application_prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/resources/application_qa.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/sharma/accounts/AccountsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/sharma/accounts/AccountsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/sharma/accounts/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/sharma/accounts/controller/AccountsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/Changes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/Changes.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +46,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\test-Microservices-git\springboot-microservice\accounts\src\main\java\com\sharma\accounts\dto" />
       <recent name="D:\test-Microservices-git\springboot-microservice\accounts\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\test-Microservices-git\springboot-microservice\accounts" />
     </key>
   </component>
   <component name="RunManager">

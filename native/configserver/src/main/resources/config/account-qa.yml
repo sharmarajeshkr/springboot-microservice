@@ -1,0 +1,10 @@
+build:
+  version: "2.0"
+
+accounts:
+  message: "Welcome to EazyBank accounts"
+  contactDetails:
+    name: "Rajesh QA"
+    email: "QA rajesh9616@gmail.com"
+  onCallSupport:
+    -(91)9789824976

@@ -16,6 +16,12 @@ spring:
 encrypt:
   key: MJiWzJYmCj2y3gpfseOfXEe5CiFicSCpxldMZ4NuswN/pCncPDffHZ5iNWghc3G5
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 server:
   port: 8071
 

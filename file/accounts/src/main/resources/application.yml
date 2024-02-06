@@ -17,3 +17,6 @@ spring:
         web-allow-others: true
   config:
     import: "optional:configserver:http://localhost:8071/"
+
+build:
+  version: "1.0"

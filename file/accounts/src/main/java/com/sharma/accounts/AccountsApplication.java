@@ -16,7 +16,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @EnableJpaRepositories("com.sharma.accounts.repository")
 @EntityScan("com.sharma.accounts.model")*/
 @EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
-
 @EnableConfigurationProperties(value = {AccountsContactInfoDto.class})
 // ------------------------ Documentation -----------------------//
 @OpenAPIDefinition(

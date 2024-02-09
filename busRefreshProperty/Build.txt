@@ -1,0 +1,824 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\accounts> mvn compile jib:dockerBuild
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------< com.sharma:accounts >-------------------------
+[INFO] Building accounts 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- resources:3.3.1:resources (default-resources) @ accounts ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO]
+[INFO] --- compiler:3.11.0:compile (default-compile) @ accounts ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 21 source files with javac [debug release 17] to target\classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[INFO] /D:/test-Microservices-git/springboot-microservice/busRefreshProperty/accounts/src/main/java/com/eazybank/accounts/entity/Customer.java: D:\test-Microservices-git\springboot-microservice\busRefreshProperty\accounts\src\main\java\com\eazybank\accounts\entity\Customer.java uses or overrides a deprecated API.
+[INFO] /D:/test-Microservices-git/springboot-microservice/busRefreshProperty/accounts/src/main/java/com/eazybank/accounts/entity/Customer.java: Recompile with -Xlint:deprecation for details.
+[INFO]
+[INFO] --- jib:3.3.2:dockerBuild (default-cli) @ accounts ---
+[WARNING] 'mainClass' configured in 'maven-jar-plugin' is not a valid Java class: ${start-class}
+[INFO]
+[INFO] Containerizing application to Docker daemon as sharma/accounts:s6...
+[WARNING] Base image 'eclipse-temurin:17-jre' does not use a specific image digest - build may not be reproducible
+[INFO] The base image requires auth. Trying again for eclipse-temurin:17-jre...
+[WARNING] The credential helper (docker-credential-desktop) has nothing for server URL: registry-1.docker.io
+[WARNING]
+Got output:
+
+credentials not found in native keychain
+
+[WARNING] The credential helper (docker-credential-desktop) has nothing for server URL: registry.hub.docker.com
+[WARNING]
+Got output:
+
+credentials not found in native keychain
+
+[INFO] Using credentials from Docker config (C:\Users\rajes\.docker\config.json) for eclipse-temurin:17-jre
+[INFO] Using base image with digest: sha256:47afd83a4e58e90f583cdab19443da3961177818d513fa44581a9dc148e50bfb
+[INFO]
+[INFO] Container entrypoint set to [java, -cp, @/app/jib-classpath-file, com.eazybank.accounts.AccountsApplication]
+[INFO]
+[INFO] Built image to Docker daemon as sharma/accounts:s6
+[INFO] Executing tasks:
+[INFO] [==============================] 100.0% complete
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  48.169 s
+[INFO] Finished at: 2024-02-09T13:50:06+05:30
+[INFO] ------------------------------------------------------------------------
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\accounts> docker tag sharma/accounts:s6 rajeshsharma9616/accounts:s6
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\accounts> docker push rajeshsharma9616/accounts:s6
+The push refers to repository [docker.io/rajeshsharma9616/accounts]
+b800814364e2: Pushed
+e5038c894600: Pushed
+40559063c7a9: Pushed
+83c68943fdc8: Layer already exists
+5dd694b04e2e: Layer already exists
+8fec61bdd63c: Layer already exists
+0c4355b14662: Layer already exists
+ab995379f7a6: Layer already exists
+1a102d1cac2b: Layer already exists
+s6: digest: sha256:d9660c420db5fd239f77dc28cffcb2e0f455ba8ed9fa60b87691a508de80f5ee size: 2204
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\accounts> cd .
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\accounts> cd ..
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty> cd cards
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\cards> mvn compile jib:dockerBuild
+[INFO] Scanning for projects...
+[INFO]
+[INFO] --------------------------< com.sharma:cards >--------------------------
+[INFO] Building cards 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- resources:3.3.1:resources (default-resources) @ cards ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO]
+[INFO] --- compiler:3.11.0:compile (default-compile) @ cards ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 17 source files with javac [debug release 17] to target\classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[INFO] /D:/test-Microservices-git/springboot-microservice/busRefreshProperty/cards/src/main/java/com/eazybank/cards/entity/Cards.java: D:\test-Microservices-git\springboot-microservice\busRefreshProperty\cards\src\main\java\com\eazybank\cards\entity\Cards.java uses or overrides a deprecated API.
+[INFO] /D:/test-Microservices-git/springboot-microservice/busRefreshProperty/cards/src/main/java/com/eazybank/cards/entity/Cards.java: Recompile with -Xlint:deprecation for details.
+[INFO]
+[INFO] --- jib:3.3.2:dockerBuild (default-cli) @ cards ---
+[WARNING] 'mainClass' configured in 'maven-jar-plugin' is not a valid Java class: ${start-class}
+[INFO]
+[INFO] Containerizing application to Docker daemon as sharma/cards:s6...
+[WARNING] Base image 'eclipse-temurin:17-jre' does not use a specific image digest - build may not be reproducible
+[INFO] The base image requires auth. Trying again for eclipse-temurin:17-jre...
+[WARNING] The credential helper (docker-credential-desktop) has nothing for server URL: registry-1.docker.io
+[WARNING]
+Got output:
+
+credentials not found in native keychain
+
+[WARNING] The credential helper (docker-credential-desktop) has nothing for server URL: registry.hub.docker.com
+[WARNING]
+Got output:
+
+credentials not found in native keychain
+
+[INFO] Using credentials from Docker config (C:\Users\rajes\.docker\config.json) for eclipse-temurin:17-jre
+[INFO] Using base image with digest: sha256:47afd83a4e58e90f583cdab19443da3961177818d513fa44581a9dc148e50bfb
+[INFO]
+[INFO] Container entrypoint set to [java, -cp, @/app/jib-classpath-file, com.eazybank.cards.CardsApplication]
+[INFO]
+[INFO] Built image to Docker daemon as sharma/cards:s6
+[INFO] Executing tasks:
+[INFO] [==============================] 100.0% complete
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:02 min
+[INFO] Finished at: 2024-02-09T13:52:39+05:30
+[INFO] ------------------------------------------------------------------------
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\cards> docker tag sharma/cards:s6 rajeshsharma9616/cards:s6
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\cards> docker push rajeshsharma9616/cards:s6
+The push refers to repository [docker.io/rajeshsharma9616/cards]
+9c62f175768b: Pushed
+b4d03b82b57c: Pushed
+42ba4391a909: Pushed
+0df6824f4e8a: Layer already exists
+5dd694b04e2e: Layer already exists
+8fec61bdd63c: Layer already exists
+0c4355b14662: Layer already exists
+ab995379f7a6: Layer already exists
+1a102d1cac2b: Layer already exists
+s6: digest: sha256:f289768c082210028c0c85d7edfe5c2061951c8299e38c63a6a12320d9e7a10c size: 2204
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\cards> cd ..
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty> cd .\loans\
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\loans> mvn compile jib:dockerBuild
+[INFO] Scanning for projects...
+[INFO]
+[INFO] --------------------------< com.sharma:loans >--------------------------
+[INFO] Building loans 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- resources:3.3.1:resources (default-resources) @ loans ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO]
+[INFO] --- compiler:3.11.0:compile (default-compile) @ loans ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 17 source files with javac [debug release 17] to target\classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[INFO] /D:/test-Microservices-git/springboot-microservice/busRefreshProperty/loans/src/main/java/com/eazybytes/loans/entity/Loans.java: D:\test-Microservices-git\springboot-microservice\busRefreshProperty\loans\src\main\java\com\eazybytes\loans\entity\Loans.java uses or overrides a deprecated API.
+[INFO] /D:/test-Microservices-git/springboot-microservice/busRefreshProperty/loans/src/main/java/com/eazybytes/loans/entity/Loans.java: Recompile with -Xlint:deprecation for details.
+[INFO]
+[INFO] --- jib:3.3.2:dockerBuild (default-cli) @ loans ---
+[WARNING] 'mainClass' configured in 'maven-jar-plugin' is not a valid Java class: ${start-class}
+[INFO]
+[INFO] Containerizing application to Docker daemon as sharma/loans:s6...
+[WARNING] Base image 'eclipse-temurin:17-jre' does not use a specific image digest - build may not be reproducible
+[INFO] The base image requires auth. Trying again for eclipse-temurin:17-jre...
+[WARNING] The credential helper (docker-credential-desktop) has nothing for server URL: registry-1.docker.io
+[WARNING]
+Got output:
+
+credentials not found in native keychain
+
+[WARNING] The credential helper (docker-credential-desktop) has nothing for server URL: registry.hub.docker.com
+[WARNING]
+Got output:
+
+credentials not found in native keychain
+
+[INFO] Using credentials from Docker config (C:\Users\rajes\.docker\config.json) for eclipse-temurin:17-jre
+[INFO] Using base image with digest: sha256:47afd83a4e58e90f583cdab19443da3961177818d513fa44581a9dc148e50bfb
+[INFO]
+[INFO] Container entrypoint set to [java, -cp, @/app/jib-classpath-file, com.eazybank.loans.LoansApplication]
+[INFO]
+[INFO] Built image to Docker daemon as sharma/loans:s6
+[INFO] Executing tasks:
+[INFO] [==============================] 100.0% complete
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  39.181 s
+[INFO] Finished at: 2024-02-09T13:55:13+05:30
+[INFO] ------------------------------------------------------------------------
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\loans> docker tag sharma/loans:s6 rajeshsharma9616/loans:s6
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\loans> docker push rajeshsharma9616/loans:s6
+The push refers to repository [docker.io/rajeshsharma9616/loans]
+96c805369e03: Layer already exists
+63578d24e10d: Layer already exists
+e9ff19ed1c7d: Layer already exists
+83c68943fdc8: Layer already exists
+5dd694b04e2e: Layer already exists
+8fec61bdd63c: Layer already exists
+0c4355b14662: Layer already exists
+ab995379f7a6: Layer already exists
+1a102d1cac2b: Layer already exists
+s6: digest: sha256:b4dbdcefdfa825ae832f78ea57d0f9be90052577a26a3f6a855fc2586ce00f3a size: 2204
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\loans> cd ..
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty> cd .\configserver\
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\configserver> mvn compile jib:dockerBuild
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ----------------------< com.sharma:configserver >-----------------------
+[INFO] Building configserver 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- resources:3.3.1:resources (default-resources) @ configserver ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO]
+[INFO] --- compiler:3.11.0:compile (default-compile) @ configserver ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 1 source file with javac [debug release 17] to target\classes
+[INFO]
+[INFO] --- jib:3.3.2:dockerBuild (default-cli) @ configserver ---
+[WARNING] 'mainClass' configured in 'maven-jar-plugin' is not a valid Java class: ${start-class}
+[INFO]
+[INFO] Containerizing application to Docker daemon as sharma/configserver:s6...
+[WARNING] Base image 'eclipse-temurin:17-jre' does not use a specific image digest - build may not be reproducible
+[INFO] The base image requires auth. Trying again for eclipse-temurin:17-jre...
+[WARNING] The credential helper (docker-credential-desktop) has nothing for server URL: registry-1.docker.io
+[WARNING]
+Got output:
+
+credentials not found in native keychain
+
+[WARNING] The credential helper (docker-credential-desktop) has nothing for server URL: registry.hub.docker.com
+[WARNING]
+Got output:
+
+credentials not found in native keychain
+
+[INFO] Using credentials from Docker config (C:\Users\rajes\.docker\config.json) for eclipse-temurin:17-jre
+[INFO] Using base image with digest: sha256:47afd83a4e58e90f583cdab19443da3961177818d513fa44581a9dc148e50bfb
+[INFO]
+[INFO] Container entrypoint set to [java, -cp, @/app/jib-classpath-file, com.eazybank.configserver.ConfigserverApplication]
+[INFO]
+[INFO] Built image to Docker daemon as sharma/configserver:s6
+[INFO] Executing tasks:
+[INFO] [==============================] 100.0% complete
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  32.989 s
+[INFO] Finished at: 2024-02-09T13:56:41+05:30
+[INFO] ------------------------------------------------------------------------
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\configserver> docker tag sharma/configserver:s6 rajeshsharma9616/configserver:s6
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\configserver> docker push rajeshsharma9616/configserver:s6
+The push refers to repository [docker.io/rajeshsharma9616/configserver]
+17e79071305a: Pushed
+e44bcc830448: Pushed
+ac6d4ad0e0d2: Pushed
+2658cce77fc8: Layer already exists
+5dd694b04e2e: Layer already exists
+8fec61bdd63c: Layer already exists
+0c4355b14662: Layer already exists
+ab995379f7a6: Layer already exists
+1a102d1cac2b: Layer already exists
+s6: digest: sha256:ef6ab7fc499b5a0025a4ee86a1cfe29acb8435002f65fbf490fe3cc057332a10 size: 2202
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\configserver> cd ..
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty> cd .\docker-compose\
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\docker-compose> docker compose down
+no configuration file provided: not found
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\docker-compose> cd .\default\
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\docker-compose\default> docker compose down
+[+] Running 6/6
+ ✔ Container cards-ms          Removed                                                                                                                       6.3s
+ ✔ Container loans-ms          Removed                                                                                                                       7.7s
+ ✔ Container accounts-ms       Removed                                                                                                                       6.1s
+ ✔ Container configserver-ms   Removed                                                                                                                       3.6s
+ ✔ Container default-rabbit-1  Removed                                                                                                                       8.0s
+ ✔ Network default_eazybank    Removed                                                                                                                       0.3s
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\docker-compose\default> docker compose up
+[+] Building 0.0s (0/0)                                                                                                                            docker:default
+[+] Running 6/6
+ ✔ Network default_eazybank    Created                                                                                                                       0.2s
+ ✔ Container default-rabbit-1  Created                                                                                                                       0.4s
+ ✔ Container configserver-ms   Created                                                                                                                       0.2s
+ ✔ Container loans-ms          Created                                                                                                                       0.3s
+ ✔ Container cards-ms          Created                                                                                                                       0.3s
+ ✔ Container accounts-ms       Created                                                                                                                       0.4s
+Attaching to accounts-ms, cards-ms, configserver-ms, default-rabbit-1, loans-ms
+default-rabbit-1  | 2024-02-09 08:28:55.608503+00:00 [notice] <0.44.0> Application syslog exited with reason: stopped
+default-rabbit-1  | 2024-02-09 08:28:55.627513+00:00 [notice] <0.230.0> Logging: switching to configured handler(s); following messages may not be visible in this log output
+default-rabbit-1  | 2024-02-09 08:28:55.629101+00:00 [notice] <0.230.0> Logging: configured log handlers are now ACTIVE
+default-rabbit-1  | 2024-02-09 08:28:56.207348+00:00 [info] <0.230.0> ra: starting system quorum_queues
+default-rabbit-1  | 2024-02-09 08:28:56.207530+00:00 [info] <0.230.0> starting Ra system: quorum_queues in directory: /var/lib/rabbitmq/mnesia/rabbit@rabbitmq/quorum/rabbit@rabbitmq
+default-rabbit-1  | 2024-02-09 08:28:56.405756+00:00 [info] <0.261.0> ra system 'quorum_queues' running pre init for 0 registered servers
+default-rabbit-1  | 2024-02-09 08:28:56.436565+00:00 [info] <0.262.0> ra: meta data store initialised for system quorum_queues. 0 record(s) recovered
+default-rabbit-1  | 2024-02-09 08:28:56.481947+00:00 [notice] <0.267.0> WAL: ra_log_wal init, open tbls: ra_log_open_mem_tables, closed tbls: ra_log_closed_mem_tables
+default-rabbit-1  | 2024-02-09 08:28:56.503798+00:00 [info] <0.230.0> ra: starting system coordination
+default-rabbit-1  | 2024-02-09 08:28:56.503911+00:00 [info] <0.230.0> starting Ra system: coordination in directory: /var/lib/rabbitmq/mnesia/rabbit@rabbitmq/coordination/rabbit@rabbitmq
+default-rabbit-1  | 2024-02-09 08:28:56.511527+00:00 [info] <0.274.0> ra system 'coordination' running pre init for 0 registered servers
+default-rabbit-1  | 2024-02-09 08:28:56.513607+00:00 [info] <0.275.0> ra: meta data store initialised for system coordination. 0 record(s) recovered
+default-rabbit-1  | 2024-02-09 08:28:56.514105+00:00 [notice] <0.280.0> WAL: ra_coordination_log_wal init, open tbls: ra_coordination_log_open_mem_tables, closed tbls: ra_coordination_log_closed_mem_tables
+default-rabbit-1  | 2024-02-09 08:28:56.529788+00:00 [info] <0.230.0>
+default-rabbit-1  | 2024-02-09 08:28:56.529788+00:00 [info] <0.230.0>  Starting RabbitMQ 3.12.12 on Erlang 25.3.2.8 [jit]
+default-rabbit-1  | 2024-02-09 08:28:56.529788+00:00 [info] <0.230.0>  Copyright (c) 2007-2023 Broadcom Inc and/or its subsidiaries
+default-rabbit-1  | 2024-02-09 08:28:56.529788+00:00 [info] <0.230.0>  Licensed under the MPL 2.0. Website: https://rabbitmq.com
+default-rabbit-1  |
+default-rabbit-1  |   ##  ##      RabbitMQ 3.12.12
+default-rabbit-1  |   ##  ##
+default-rabbit-1  |   ##########  Copyright (c) 2007-2023 Broadcom Inc and/or its subsidiaries
+default-rabbit-1  |   ######  ##
+default-rabbit-1  |   ##########  Licensed under the MPL 2.0. Website: https://rabbitmq.com
+default-rabbit-1  |
+default-rabbit-1  |   Erlang:      25.3.2.8 [jit]
+default-rabbit-1  |   TLS Library: OpenSSL - OpenSSL 3.1.5 30 Jan 2024
+default-rabbit-1  |   Release series support status: supported
+default-rabbit-1  |
+default-rabbit-1  |   Doc guides:  https://rabbitmq.com/documentation.html
+default-rabbit-1  |   Support:     https://rabbitmq.com/contact.html
+default-rabbit-1  |   Tutorials:   https://rabbitmq.com/getstarted.html
+default-rabbit-1  |   Monitoring:  https://rabbitmq.com/monitoring.html
+default-rabbit-1  |
+default-rabbit-1  |   Logs: <stdout>
+default-rabbit-1  |
+default-rabbit-1  |   Config file(s): /etc/rabbitmq/conf.d/10-defaults.conf
+default-rabbit-1  |
+default-rabbit-1  |   Starting broker...2024-02-09 08:28:56.554110+00:00 [info] <0.230.0>
+default-rabbit-1  | 2024-02-09 08:28:56.554110+00:00 [info] <0.230.0>  node           : rabbit@rabbitmq
+default-rabbit-1  | 2024-02-09 08:28:56.554110+00:00 [info] <0.230.0>  home dir       : /var/lib/rabbitmq
+default-rabbit-1  | 2024-02-09 08:28:56.554110+00:00 [info] <0.230.0>  config file(s) : /etc/rabbitmq/conf.d/10-defaults.conf
+default-rabbit-1  | 2024-02-09 08:28:56.554110+00:00 [info] <0.230.0>  cookie hash    : HGyHszKhp9lz7ZtFAW6rGg==
+default-rabbit-1  | 2024-02-09 08:28:56.554110+00:00 [info] <0.230.0>  log(s)         : <stdout>
+default-rabbit-1  | 2024-02-09 08:28:56.554110+00:00 [info] <0.230.0>  data dir       : /var/lib/rabbitmq/mnesia/rabbit@rabbitmq
+default-rabbit-1  | 2024-02-09 08:29:04.684896+00:00 [info] <0.230.0> Running boot step pre_boot defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:04.684984+00:00 [info] <0.230.0> Running boot step rabbit_global_counters defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:04.686206+00:00 [info] <0.230.0> Running boot step rabbit_osiris_metrics defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:04.687423+00:00 [info] <0.230.0> Running boot step rabbit_core_metrics defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:04.691294+00:00 [info] <0.230.0> Running boot step rabbit_alarm defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:04.700846+00:00 [info] <0.303.0> Memory high watermark set to 1549 MiB (1624373657 bytes) of 3872 MiB (4060934144 bytes) total
+default-rabbit-1  | 2024-02-09 08:29:04.708840+00:00 [info] <0.305.0> Enabling free disk space monitoring (disk free space: 1020210290688, total memory: 4060934144)
+default-rabbit-1  | 2024-02-09 08:29:04.708949+00:00 [info] <0.305.0> Disk free limit set to 50MB
+default-rabbit-1  | 2024-02-09 08:29:04.714865+00:00 [info] <0.230.0> Running boot step code_server_cache defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:04.715130+00:00 [info] <0.230.0> Running boot step file_handle_cache defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:04.716102+00:00 [info] <0.308.0> Limiting to approx 1048479 file handles (943629 sockets)
+default-rabbit-1  | 2024-02-09 08:29:04.716369+00:00 [info] <0.309.0> FHC read buffering: OFF
+default-rabbit-1  | 2024-02-09 08:29:04.716468+00:00 [info] <0.309.0> FHC write buffering: ON
+default-rabbit-1  | 2024-02-09 08:29:04.720531+00:00 [info] <0.230.0> Running boot step worker_pool defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:04.720804+00:00 [info] <0.282.0> Will use 4 processes for default worker pool
+default-rabbit-1  | 2024-02-09 08:29:04.720896+00:00 [info] <0.282.0> Starting worker pool 'worker_pool' with 4 processes in it
+default-rabbit-1  | 2024-02-09 08:29:04.721816+00:00 [info] <0.230.0> Running boot step database defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:04.724028+00:00 [info] <0.230.0> Node database directory at /var/lib/rabbitmq/mnesia/rabbit@rabbitmq is empty. Assuming we need to join an existing cluster or initialise from scratch...
+default-rabbit-1  | 2024-02-09 08:29:04.724295+00:00 [info] <0.230.0> Configured peer discovery backend: rabbit_peer_discovery_classic_config
+default-rabbit-1  | 2024-02-09 08:29:04.724447+00:00 [info] <0.230.0> Will try to lock with peer discovery backend rabbit_peer_discovery_classic_config
+default-rabbit-1  | 2024-02-09 08:29:04.724800+00:00 [info] <0.230.0> All discovered existing cluster peers:
+default-rabbit-1  | 2024-02-09 08:29:04.724867+00:00 [info] <0.230.0> Discovered no peer nodes to cluster with. Some discovery backends can filter nodes out based on a readiness criteria. Enabling debug logging might help troubleshoot.
+default-rabbit-1  | 2024-02-09 08:29:04.730889+00:00 [notice] <0.44.0> Application mnesia exited with reason: stopped
+default-rabbit-1  | 2024-02-09 08:29:05.057846+00:00 [info] <0.230.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+default-rabbit-1  | 2024-02-09 08:29:05.058083+00:00 [info] <0.230.0> Successfully synced tables from a peer
+default-rabbit-1  | 2024-02-09 08:29:05.059016+00:00 [notice] <0.283.0> Feature flags: attempt to enable `stream_sac_coordinator_unblock_group`...
+default-rabbit-1  | 2024-02-09 08:29:05.115244+00:00 [notice] <0.283.0> Feature flags: `stream_sac_coordinator_unblock_group` enabled
+default-rabbit-1  | 2024-02-09 08:29:05.115746+00:00 [notice] <0.283.0> Feature flags: attempt to enable `restart_streams`...
+default-rabbit-1  | 2024-02-09 08:29:05.159869+00:00 [notice] <0.283.0> Feature flags: `restart_streams` enabled
+default-rabbit-1  | 2024-02-09 08:29:05.160593+00:00 [info] <0.230.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+default-rabbit-1  | 2024-02-09 08:29:05.161061+00:00 [info] <0.230.0> Successfully synced tables from a peer
+default-rabbit-1  | 2024-02-09 08:29:05.195786+00:00 [info] <0.230.0> Waiting for Mnesia tables for 30000 ms, 9 retries left
+default-rabbit-1  | 2024-02-09 08:29:05.196234+00:00 [info] <0.230.0> Successfully synced tables from a peer
+default-rabbit-1  | 2024-02-09 08:29:05.196327+00:00 [info] <0.230.0> Peer discovery backend rabbit_peer_discovery_classic_config does not support registration, skipping registration.
+default-rabbit-1  | 2024-02-09 08:29:05.196470+00:00 [info] <0.230.0> Will try to unlock with peer discovery backend rabbit_peer_discovery_classic_config
+default-rabbit-1  | 2024-02-09 08:29:05.196926+00:00 [info] <0.230.0> Running boot step tracking_metadata_store defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.197293+00:00 [info] <0.486.0> Setting up a table for connection tracking on this node: tracked_connection
+default-rabbit-1  | 2024-02-09 08:29:05.197429+00:00 [info] <0.486.0> Setting up a table for per-vhost connection counting on this node: tracked_connection_per_vhost
+default-rabbit-1  | 2024-02-09 08:29:05.197686+00:00 [info] <0.486.0> Setting up a table for per-user connection counting on this node: tracked_connection_per_user
+default-rabbit-1  | 2024-02-09 08:29:05.197802+00:00 [info] <0.486.0> Setting up a table for channel tracking on this node: tracked_channel
+default-rabbit-1  | 2024-02-09 08:29:05.197963+00:00 [info] <0.486.0> Setting up a table for channel tracking on this node: tracked_channel_per_user
+default-rabbit-1  | 2024-02-09 08:29:05.198179+00:00 [info] <0.230.0> Running boot step networking_metadata_store defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.198579+00:00 [info] <0.230.0> Running boot step feature_flags defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.199566+00:00 [info] <0.230.0> Running boot step codec_correctness_check defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.199738+00:00 [info] <0.230.0> Running boot step external_infrastructure defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.199855+00:00 [info] <0.230.0> Running boot step rabbit_event defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.200143+00:00 [info] <0.230.0> Running boot step rabbit_registry defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.200348+00:00 [info] <0.230.0> Running boot step rabbit_auth_mechanism_amqplain defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.200525+00:00 [info] <0.230.0> Running boot step rabbit_auth_mechanism_cr_demo defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.200757+00:00 [info] <0.230.0> Running boot step rabbit_auth_mechanism_plain defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.200937+00:00 [info] <0.230.0> Running boot step rabbit_exchange_type_direct defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.201042+00:00 [info] <0.230.0> Running boot step rabbit_exchange_type_fanout defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.201180+00:00 [info] <0.230.0> Running boot step rabbit_exchange_type_headers defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.201365+00:00 [info] <0.230.0> Running boot step rabbit_exchange_type_topic defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.201486+00:00 [info] <0.230.0> Running boot step rabbit_mirror_queue_mode_all defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.201622+00:00 [info] <0.230.0> Running boot step rabbit_mirror_queue_mode_exactly defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.201775+00:00 [info] <0.230.0> Running boot step rabbit_mirror_queue_mode_nodes defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.201913+00:00 [info] <0.230.0> Running boot step rabbit_priority_queue defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.202005+00:00 [info] <0.230.0> Priority queues enabled, real BQ is rabbit_variable_queue
+default-rabbit-1  | 2024-02-09 08:29:05.202305+00:00 [info] <0.230.0> Running boot step rabbit_queue_location_client_local defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.202472+00:00 [info] <0.230.0> Running boot step rabbit_queue_location_min_masters defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.202679+00:00 [info] <0.230.0> Running boot step rabbit_queue_location_random defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.202893+00:00 [info] <0.230.0> Running boot step kernel_ready defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.202971+00:00 [info] <0.230.0> Running boot step rabbit_sysmon_minder defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.203360+00:00 [info] <0.230.0> Running boot step rabbit_epmd_monitor defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.207904+00:00 [info] <0.494.0> epmd monitor knows us, inter-node communication (distribution) port: 25672
+default-rabbit-1  | 2024-02-09 08:29:05.209337+00:00 [info] <0.230.0> Running boot step guid_generator defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.220190+00:00 [info] <0.230.0> Running boot step rabbit_node_monitor defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.220736+00:00 [info] <0.498.0> Starting rabbit_node_monitor (in ignore mode)
+default-rabbit-1  | 2024-02-09 08:29:05.220997+00:00 [info] <0.230.0> Running boot step delegate_sup defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.222279+00:00 [info] <0.230.0> Running boot step rabbit_memory_monitor defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.223171+00:00 [info] <0.230.0> Running boot step rabbit_fifo_dlx_sup defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.223398+00:00 [info] <0.230.0> Running boot step core_initialized defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.223514+00:00 [info] <0.230.0> Running boot step rabbit_channel_tracking_handler defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.223659+00:00 [info] <0.230.0> Running boot step rabbit_connection_tracking_handler defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.223860+00:00 [info] <0.230.0> Running boot step rabbit_definitions_hashing defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.224081+00:00 [info] <0.230.0> Running boot step rabbit_exchange_parameters defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.224704+00:00 [info] <0.230.0> Running boot step rabbit_mirror_queue_misc defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.225656+00:00 [info] <0.230.0> Running boot step rabbit_policies defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.226633+00:00 [info] <0.230.0> Running boot step rabbit_policy defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.226931+00:00 [info] <0.230.0> Running boot step rabbit_queue_location_validator defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.227058+00:00 [info] <0.230.0> Running boot step rabbit_quorum_memory_manager defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.227185+00:00 [info] <0.230.0> Running boot step rabbit_stream_coordinator defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.227619+00:00 [info] <0.230.0> Running boot step rabbit_vhost_limit defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.227833+00:00 [info] <0.230.0> Running boot step rabbit_mgmt_reset_handler defined by app rabbitmq_management
+default-rabbit-1  | 2024-02-09 08:29:05.227940+00:00 [info] <0.230.0> Running boot step rabbit_mgmt_db_handler defined by app rabbitmq_management_agent
+default-rabbit-1  | 2024-02-09 08:29:05.228030+00:00 [info] <0.230.0> Management plugin: using rates mode 'basic'
+default-rabbit-1  | 2024-02-09 08:29:05.228350+00:00 [info] <0.230.0> Running boot step recovery defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.229279+00:00 [info] <0.230.0> Running boot step empty_db_check defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.229429+00:00 [info] <0.230.0> Will seed default virtual host and user...
+default-rabbit-1  | 2024-02-09 08:29:05.231106+00:00 [info] <0.230.0> Adding vhost '/' (description: 'Default virtual host', tags: [])
+default-rabbit-1  | 2024-02-09 08:29:05.245659+00:00 [info] <0.230.0> Inserted a virtual host record {vhost,<<"/">>,[],
+default-rabbit-1  | 2024-02-09 08:29:05.245659+00:00 [info] <0.230.0>                                       #{description =>
+default-rabbit-1  | 2024-02-09 08:29:05.245659+00:00 [info] <0.230.0>                                             <<"Default virtual host">>,
+default-rabbit-1  | 2024-02-09 08:29:05.245659+00:00 [info] <0.230.0>                                         tags => []}}
+default-rabbit-1  | 2024-02-09 08:29:05.290222+00:00 [info] <0.543.0> Making sure data directory '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L' for vhost '/' exists
+default-rabbit-1  | 2024-02-09 08:29:05.294960+00:00 [info] <0.543.0> Setting segment_entry_count for vhost '/' with 0 queues to '2048'
+default-rabbit-1  | 2024-02-09 08:29:05.313345+00:00 [info] <0.543.0> Starting message stores for vhost '/'
+default-rabbit-1  | 2024-02-09 08:29:05.313862+00:00 [info] <0.553.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_transient": using rabbit_msg_store_ets_index to provide index
+default-rabbit-1  | 2024-02-09 08:29:05.319103+00:00 [info] <0.543.0> Started message store of type transient for vhost '/'
+default-rabbit-1  | 2024-02-09 08:29:05.319539+00:00 [info] <0.557.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": using rabbit_msg_store_ets_index to provide index
+default-rabbit-1  | 2024-02-09 08:29:05.323669+00:00 [warning] <0.557.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": rebuilding indices from scratch
+default-rabbit-1  | 2024-02-09 08:29:05.325937+00:00 [info] <0.543.0> Started message store of type persistent for vhost '/'
+default-rabbit-1  | 2024-02-09 08:29:05.326215+00:00 [info] <0.543.0> Recovering 0 queues of type rabbit_classic_queue took 29ms
+default-rabbit-1  | 2024-02-09 08:29:05.326348+00:00 [info] <0.543.0> Recovering 0 queues of type rabbit_quorum_queue took 0ms
+default-rabbit-1  | 2024-02-09 08:29:05.326618+00:00 [info] <0.543.0> Recovering 0 queues of type rabbit_stream_queue took 0ms
+default-rabbit-1  | 2024-02-09 08:29:05.340637+00:00 [info] <0.230.0> Created user 'guest'
+default-rabbit-1  | 2024-02-09 08:29:05.347554+00:00 [info] <0.230.0> Successfully set user tags for user 'guest' to [administrator]
+default-rabbit-1  | 2024-02-09 08:29:05.353723+00:00 [info] <0.230.0> Successfully set permissions for user 'guest' in virtual host '/' to '.*', '.*', '.*'
+default-rabbit-1  | 2024-02-09 08:29:05.353927+00:00 [info] <0.230.0> Running boot step rabbit_observer_cli defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.354354+00:00 [info] <0.230.0> Running boot step rabbit_looking_glass defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.354451+00:00 [info] <0.230.0> Running boot step rabbit_core_metrics_gc defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.355222+00:00 [info] <0.230.0> Running boot step background_gc defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.356301+00:00 [info] <0.230.0> Running boot step routing_ready defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.356478+00:00 [info] <0.230.0> Running boot step pre_flight defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.356778+00:00 [info] <0.230.0> Running boot step notify_cluster defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.356916+00:00 [info] <0.230.0> Running boot step networking defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.357062+00:00 [info] <0.230.0> Running boot step definition_import_worker_pool defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.357219+00:00 [info] <0.282.0> Starting worker pool 'definition_import_pool' with 4 processes in it
+default-rabbit-1  | 2024-02-09 08:29:05.358051+00:00 [info] <0.230.0> Running boot step cluster_name defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.358399+00:00 [info] <0.230.0> Initialising internal cluster ID to 'rabbitmq-cluster-id-tggpD7Mzwx3LGx7xvnKXhw'
+default-rabbit-1  | 2024-02-09 08:29:05.369305+00:00 [info] <0.230.0> Running boot step direct_client defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.369534+00:00 [info] <0.230.0> Running boot step rabbit_maintenance_mode_state defined by app rabbit
+default-rabbit-1  | 2024-02-09 08:29:05.369614+00:00 [info] <0.230.0> Creating table rabbit_node_maintenance_states for maintenance mode status
+default-rabbit-1  | 2024-02-09 08:29:05.382435+00:00 [info] <0.230.0> Running boot step rabbit_management_load_definitions defined by app rabbitmq_management
+default-rabbit-1  | 2024-02-09 08:29:05.382664+00:00 [info] <0.597.0> Resetting node maintenance status
+default-rabbit-1  | 2024-02-09 08:29:05.404708+00:00 [info] <0.656.0> Management plugin: HTTP (non-TLS) listener started on port 15672
+default-rabbit-1  | 2024-02-09 08:29:05.405342+00:00 [info] <0.684.0> Statistics database started.
+default-rabbit-1  | 2024-02-09 08:29:05.406289+00:00 [info] <0.683.0> Starting worker pool 'management_worker_pool' with 3 processes in it
+default-rabbit-1  | 2024-02-09 08:29:05.426759+00:00 [info] <0.698.0> Prometheus metrics: HTTP (non-TLS) listener started on port 15692
+default-rabbit-1  | 2024-02-09 08:29:05.427089+00:00 [info] <0.597.0> Ready to start client connection listeners
+default-rabbit-1  | 2024-02-09 08:29:05.431280+00:00 [info] <0.742.0> started TCP listener on [::]:5672
+default-rabbit-1  |  completed with 4 plugins.
+default-rabbit-1  | 2024-02-09 08:29:05.679129+00:00 [info] <0.597.0> Server startup complete; 4 plugins started.
+default-rabbit-1  | 2024-02-09 08:29:05.679129+00:00 [info] <0.597.0>  * rabbitmq_prometheus
+default-rabbit-1  | 2024-02-09 08:29:05.679129+00:00 [info] <0.597.0>  * rabbitmq_management
+default-rabbit-1  | 2024-02-09 08:29:05.679129+00:00 [info] <0.597.0>  * rabbitmq_management_agent
+default-rabbit-1  | 2024-02-09 08:29:05.679129+00:00 [info] <0.597.0>  * rabbitmq_web_dispatch
+default-rabbit-1  | 2024-02-09 08:29:05.784956+00:00 [info] <0.9.0> Time to start RabbitMQ: 18136105 us
+configserver-ms   |
+configserver-ms   |   .   ____          _            __ _ _
+configserver-ms   |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+configserver-ms   | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+configserver-ms   |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+configserver-ms   |   '  |____| .__|_| |_|_| |_\__, | / / / /
+configserver-ms   |  =========|_|==============|___/=/_/_/_/
+configserver-ms   |  :: Spring Boot ::                (v3.1.3)
+configserver-ms   |
+configserver-ms   | 2024-02-09T08:29:12.591Z  INFO 1 --- [           main] c.e.c.ConfigserverApplication            : Starting ConfigserverApplication using Java 17.0.10 with PID 1 (/app/classes started by root in /)
+configserver-ms   | 2024-02-09T08:29:12.596Z  INFO 1 --- [           main] c.e.c.ConfigserverApplication            : The following 1 profile is active: "git"
+configserver-ms   | 2024-02-09T08:29:15.789Z  INFO 1 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+configserver-ms   | 2024-02-09T08:29:15.825Z  INFO 1 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+configserver-ms   | 2024-02-09T08:29:16.100Z  INFO 1 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f39a564f-f4fa-3c90-b9e7-6a12d532e924
+configserver-ms   | 2024-02-09T08:29:16.951Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8071 (http)
+configserver-ms   | 2024-02-09T08:29:16.980Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+configserver-ms   | 2024-02-09T08:29:16.980Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+configserver-ms   | 2024-02-09T08:29:17.195Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+configserver-ms   | 2024-02-09T08:29:17.201Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4463 ms
+configserver-ms   | 2024-02-09T08:29:26.130Z  INFO 1 --- [           main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'configserver.springCloudBusInput' has 1 subscriber(s).
+configserver-ms   | 2024-02-09T08:29:26.670Z  INFO 1 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 21 endpoint(s) beneath base path '/actuator'
+configserver-ms   | 2024-02-09T08:29:26.862Z  INFO 1 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+configserver-ms   | 2024-02-09T08:29:26.863Z  INFO 1 --- [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 1 subscriber(s).
+configserver-ms   | 2024-02-09T08:29:26.866Z  INFO 1 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+configserver-ms   | 2024-02-09T08:29:26.870Z  INFO 1 --- [           main] o.s.c.c.m.FileMonitorConfiguration       : Not monitoring for local config changes
+configserver-ms   | 2024-02-09T08:29:26.912Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8071 (http) with context path ''
+configserver-ms   | 2024-02-09T08:29:26.923Z  INFO 1 --- [           main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
+configserver-ms   | 2024-02-09T08:29:26.924Z  INFO 1 --- [           main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
+configserver-ms   | 2024-02-09T08:29:27.079Z  INFO 1 --- [           main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
+configserver-ms   | 2024-02-09T08:29:27.190Z  INFO 1 --- [           main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.m2z2C_L1TLe9SFMsmdlShg, bound to: springCloudBus
+configserver-ms   | 2024-02-09T08:29:27.206Z  INFO 1 --- [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbit:5672]
+default-rabbit-1  | 2024-02-09 08:29:27.234070+00:00 [info] <0.779.0> accepting AMQP connection <0.779.0> (172.22.0.3:56720 -> 172.22.0.2:5672)
+default-rabbit-1  | 2024-02-09 08:29:27.291490+00:00 [info] <0.779.0> connection <0.779.0> (172.22.0.3:56720 -> 172.22.0.2:5672) has a client-provided name: rabbitConnectionFactory#3041beb3:0
+default-rabbit-1  | 2024-02-09 08:29:27.300660+00:00 [info] <0.779.0> connection <0.779.0> (172.22.0.3:56720 -> 172.22.0.2:5672 - rabbitConnectionFactory#3041beb3:0): user 'guest' authenticated and granted access to vhost '/'
+configserver-ms   | 2024-02-09T08:29:27.309Z  INFO 1 --- [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#3041beb3:0/SimpleConnection@6e96f3cd [delegate=amqp://guest@172.22.0.2:5672/, localPort=56720]
+configserver-ms   | 2024-02-09T08:29:27.411Z  INFO 1 --- [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-2114535884.springCloudBusInput.errors' has 1 subscriber(s).
+configserver-ms   | 2024-02-09T08:29:27.414Z  INFO 1 --- [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-2114535884.springCloudBusInput.errors' has 2 subscriber(s).
+configserver-ms   | 2024-02-09T08:29:27.451Z  INFO 1 --- [           main] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.m2z2C_L1TLe9SFMsmdlShg'
+configserver-ms   | 2024-02-09T08:29:27.549Z  INFO 1 --- [           main] c.e.c.ConfigserverApplication            : Started ConfigserverApplication in 16.468 seconds (process running for 17.437)
+configserver-ms   | 2024-02-09T08:29:30.536Z  INFO 1 --- [nio-8071-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+configserver-ms   | 2024-02-09T08:29:30.537Z  INFO 1 --- [nio-8071-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+configserver-ms   | 2024-02-09T08:29:30.544Z  INFO 1 --- [nio-8071-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+configserver-ms   | 2024-02-09T08:29:38.355Z  INFO 1 --- [nio-8071-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [/tmp/config-repo-1822772102326915055/cards.yml]' via location 'file:/tmp/config-repo-1822772102326915055/'
+cards-ms          |
+cards-ms          |   .   ____          _            __ _ _
+cards-ms          |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+cards-ms          | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+cards-ms          |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+cards-ms          |   '  |____| .__|_| |_|_| |_\__, | / / / /
+cards-ms          |  =========|_|==============|___/=/_/_/_/
+cards-ms          |  :: Spring Boot ::                (v3.1.3)
+cards-ms          |
+configserver-ms   | 2024-02-09T08:29:39.321Z  INFO 1 --- [nio-8071-exec-3] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [/tmp/config-repo-1822772102326915055/accounts.yml]' via location 'file:/tmp/config-repo-1822772102326915055/'
+cards-ms          | 2024-02-09T08:29:39.587Z  INFO 1 --- [           main] com.eazybank.cards.CardsApplication      : Starting CardsApplication using Java 17.0.10 with PID 1 (/app/classes started by root in /)
+cards-ms          | 2024-02-09T08:29:39.597Z  INFO 1 --- [           main] com.eazybank.cards.CardsApplication      : The following 1 profile is active: "default"
+cards-ms          | 2024-02-09T08:29:40.012Z  INFO 1 --- [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://configserver:8071/
+cards-ms          | 2024-02-09T08:29:40.015Z  INFO 1 --- [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=cards, profiles=[default], label=null, version=e2ae35a4485c1fc831cebdd0d49641ece299945a, state=null
+cards-ms          | 2024-02-09T08:29:40.017Z  INFO 1 --- [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8071/
+cards-ms          | 2024-02-09T08:29:40.024Z  INFO 1 --- [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Exception on Url - http://localhost:8071/:or
+g.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8071/cards/default": Connection refused. Will be trying the next url if available
+cards-ms          | 2024-02-09T08:29:40.026Z  WARN 1 --- [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Could not locate PropertySource ([ConfigServ
+erConfigDataResource@47747fb9 uris = array<String>['http://localhost:8071/'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8071/cards/default": Connection refused
+cards-ms          | 2024-02-09T08:29:40.028Z  INFO 1 --- [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8071/
+cards-ms          | 2024-02-09T08:29:40.029Z  INFO 1 --- [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Exception on Url - http://localhost:8071/:or
+g.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8071/cards/default": Connection refused. Will be trying the next url if available
+cards-ms          | 2024-02-09T08:29:40.030Z  WARN 1 --- [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Could not locate PropertySource ([ConfigServ
+erConfigDataResource@3dddbe65 uris = array<String>['http://localhost:8071/'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8071/cards/default": Connection refused
+cards-ms          | 2024-02-09T08:29:40.032Z  INFO 1 --- [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8071/
+cards-ms          | 2024-02-09T08:29:40.035Z  INFO 1 --- [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Exception on Url - http://localhost:8071/:or
+g.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8071/cards/default": Connection refused. Will be trying the next url if available
+cards-ms          | 2024-02-09T08:29:40.061Z  WARN 1 --- [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Could not locate PropertySource ([ConfigServ
+erConfigDataResource@49a64d82 uris = array<String>['http://localhost:8071/'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8071/cards/default": Connection refused
+configserver-ms   | 2024-02-09T08:29:40.324Z  INFO 1 --- [nio-8071-exec-4] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [/tmp/config-repo-1822772102326915055/loans.yml]' via location 'file:/tmp/config-repo-1822772102326915055/'
+accounts-ms       |
+accounts-ms       |   .   ____          _            __ _ _
+accounts-ms       |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+accounts-ms       | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+accounts-ms       |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+accounts-ms       |   '  |____| .__|_| |_|_| |_\__, | / / / /
+accounts-ms       |  =========|_|==============|___/=/_/_/_/
+accounts-ms       |  :: Spring Boot ::                (v3.1.3)
+accounts-ms       |
+accounts-ms       | 2024-02-09T08:29:41.595Z  INFO 1 --- [  restartedMain] c.eazybank.accounts.AccountsApplication  : Starting AccountsApplication using Java 17.0.10 with PID 1 (/app/classes started by root in /)
+accounts-ms       | 2024-02-09T08:29:41.635Z  INFO 1 --- [  restartedMain] c.eazybank.accounts.AccountsApplication  : The following 1 profile is active: "default"
+loans-ms          |
+loans-ms          |   .   ____          _            __ _ _
+loans-ms          |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+loans-ms          | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+loans-ms          |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+loans-ms          |   '  |____| .__|_| |_|_| |_\__, | / / / /
+loans-ms          |  =========|_|==============|___/=/_/_/_/
+loans-ms          |  :: Spring Boot ::                (v3.1.3)
+loans-ms          |
+accounts-ms       | 2024-02-09T08:29:42.458Z  INFO 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://configserver:8071/
+accounts-ms       | 2024-02-09T08:29:42.458Z  INFO 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=accounts, profiles=[default], label=null, version=e2ae35a4485c1fc831cebdd0d49641ece299945a, state=null
+accounts-ms       | 2024-02-09T08:29:42.458Z  INFO 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8071/
+accounts-ms       | 2024-02-09T08:29:42.466Z  INFO 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Exception on Url - http://localhost:8071/:or
+g.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8071/accounts/default": Connection refused. Will be trying the next url if available
+accounts-ms       | 2024-02-09T08:29:42.467Z  WARN 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Could not locate PropertySource ([ConfigServ
+erConfigDataResource@39f3b87d uris = array<String>['http://localhost:8071/'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8071/accounts/default": Connection refused
+accounts-ms       | 2024-02-09T08:29:42.467Z  INFO 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8071/
+accounts-ms       | 2024-02-09T08:29:42.467Z  INFO 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Exception on Url - http://localhost:8071/:or
+g.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8071/accounts/default": Connection refused. Will be trying the next url if available
+accounts-ms       | 2024-02-09T08:29:42.468Z  WARN 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Could not locate PropertySource ([ConfigServ
+erConfigDataResource@6c9c34cd uris = array<String>['http://localhost:8071/'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8071/accounts/default": Connection refused
+accounts-ms       | 2024-02-09T08:29:42.468Z  INFO 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8071/
+accounts-ms       | 2024-02-09T08:29:42.468Z  INFO 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Exception on Url - http://localhost:8071/:or
+g.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8071/accounts/default": Connection refused. Will be trying the next url if available
+accounts-ms       | 2024-02-09T08:29:42.468Z  WARN 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Could not locate PropertySource ([ConfigServ
+erConfigDataResource@2e475938 uris = array<String>['http://localhost:8071/'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8071/accounts/default": Connection refused
+accounts-ms       | 2024-02-09T08:29:42.476Z  INFO 1 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+accounts-ms       | 2024-02-09T08:29:42.479Z  INFO 1 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+loans-ms          | 2024-02-09T08:29:42.931Z  INFO 1 --- [  restartedMain] com.eazybank.loans.LoansApplication        : Starting LoansApplication using Java 17.0.10 with PID 1 (/app/classes started by root in /)
+loans-ms          | 2024-02-09T08:29:42.999Z  INFO 1 --- [  restartedMain] com.eazybank.loans.LoansApplication        : The following 1 profile is active: "default"
+loans-ms          | 2024-02-09T08:29:43.649Z  INFO 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://configserver:8071/
+loans-ms          | 2024-02-09T08:29:43.650Z  INFO 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=loans, profiles=[default], label=null, version=e2ae35a4485c1fc831cebdd0d49641ece299945a, state=null
+loans-ms          | 2024-02-09T08:29:43.650Z  INFO 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8071/
+loans-ms          | 2024-02-09T08:29:43.651Z  INFO 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Exception on Url - http://localhost:8071/:or
+g.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8071/loans/default": Connection refused. Will be trying the next url if available
+loans-ms          | 2024-02-09T08:29:43.651Z  WARN 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Could not locate PropertySource ([ConfigServ
+erConfigDataResource@39f3b87d uris = array<String>['http://localhost:8071/'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8071/loans/default": Connection refused
+loans-ms          | 2024-02-09T08:29:43.652Z  INFO 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8071/
+loans-ms          | 2024-02-09T08:29:43.656Z  INFO 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Exception on Url - http://localhost:8071/:or
+g.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8071/loans/default": Connection refused. Will be trying the next url if available
+loans-ms          | 2024-02-09T08:29:43.657Z  WARN 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Could not locate PropertySource ([ConfigServ
+erConfigDataResource@6c9c34cd uris = array<String>['http://localhost:8071/'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8071/loans/default": Connection refused
+loans-ms          | 2024-02-09T08:29:43.657Z  INFO 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8071/
+loans-ms          | 2024-02-09T08:29:43.657Z  INFO 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Exception on Url - http://localhost:8071/:or
+g.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8071/loans/default": Connection refused. Will be trying the next url if available
+loans-ms          | 2024-02-09T08:29:43.658Z  WARN 1 --- [  restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Could not locate PropertySource ([ConfigServ
+erConfigDataResource@2e475938 uris = array<String>['http://localhost:8071/'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8071/loans/default": Connection refused
+loans-ms          | 2024-02-09T08:29:43.715Z  INFO 1 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+loans-ms          | 2024-02-09T08:29:43.715Z  INFO 1 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+cards-ms          | 2024-02-09T08:29:53.485Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+cards-ms          | 2024-02-09T08:29:54.121Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 586 ms. Found 1 JPA repository interfaces.
+cards-ms          | 2024-02-09T08:29:54.794Z  INFO 1 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+cards-ms          | 2024-02-09T08:29:54.860Z  INFO 1 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+cards-ms          | 2024-02-09T08:29:55.704Z  INFO 1 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=96993034-c1a4-3cb5-b63d-da4ac716d44c
+accounts-ms       | 2024-02-09T08:29:56.727Z  INFO 1 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+loans-ms          | 2024-02-09T08:29:56.757Z  INFO 1 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+loans-ms          | 2024-02-09T08:29:57.575Z  INFO 1 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 741 ms. Found 1 JPA repository interfaces.
+accounts-ms       | 2024-02-09T08:29:57.612Z  INFO 1 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 788 ms. Found 2 JPA repository interfaces.
+accounts-ms       | 2024-02-09T08:29:58.522Z  INFO 1 --- [  restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+loans-ms          | 2024-02-09T08:29:58.531Z  INFO 1 --- [  restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+loans-ms          | 2024-02-09T08:29:58.580Z  INFO 1 --- [  restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+accounts-ms       | 2024-02-09T08:29:58.581Z  INFO 1 --- [  restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+cards-ms          | 2024-02-09T08:29:58.876Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+cards-ms          | 2024-02-09T08:29:58.932Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+cards-ms          | 2024-02-09T08:29:58.936Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+loans-ms          | 2024-02-09T08:29:59.459Z  INFO 1 --- [  restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8d9330f5-6650-3854-a7a9-8a1b6dc23dd3
+accounts-ms       | 2024-02-09T08:29:59.462Z  INFO 1 --- [  restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=935f712b-9912-3e3b-9e01-f46ece8a0b48
+cards-ms          | 2024-02-09T08:29:59.556Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+cards-ms          | 2024-02-09T08:29:59.579Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 19469 ms
+cards-ms          | 2024-02-09T08:30:00.281Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+cards-ms          | 2024-02-09T08:30:01.650Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+cards-ms          | 2024-02-09T08:30:01.654Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+cards-ms          | 2024-02-09T08:30:01.707Z  INFO 1 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+cards-ms          | 2024-02-09T08:30:03.238Z  INFO 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+cards-ms          | 2024-02-09T08:30:03.526Z  INFO 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+cards-ms          | 2024-02-09T08:30:03.536Z  INFO 1 --- [           main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+cards-ms          | 2024-02-09T08:30:04.076Z  INFO 1 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+cards-ms          | 2024-02-09T08:30:04.789Z  INFO 1 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+accounts-ms       | 2024-02-09T08:30:05.414Z  INFO 1 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+accounts-ms       | 2024-02-09T08:30:05.495Z  INFO 1 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+accounts-ms       | 2024-02-09T08:30:05.502Z  INFO 1 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+loans-ms          | 2024-02-09T08:30:05.622Z  INFO 1 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+loans-ms          | 2024-02-09T08:30:05.698Z  INFO 1 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+loans-ms          | 2024-02-09T08:30:05.702Z  INFO 1 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+accounts-ms       | 2024-02-09T08:30:06.142Z  INFO 1 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+accounts-ms       | 2024-02-09T08:30:06.183Z  INFO 1 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 23663 ms
+loans-ms          | 2024-02-09T08:30:06.268Z  INFO 1 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+loans-ms          | 2024-02-09T08:30:06.294Z  INFO 1 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 22553 ms
+cards-ms          | 2024-02-09T08:30:06.398Z  INFO 1 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+loans-ms          | 2024-02-09T08:30:06.896Z  INFO 1 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+accounts-ms       | 2024-02-09T08:30:06.942Z  INFO 1 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+loans-ms          | 2024-02-09T08:30:08.169Z  INFO 1 --- [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+loans-ms          | 2024-02-09T08:30:08.174Z  INFO 1 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+accounts-ms       | 2024-02-09T08:30:08.234Z  INFO 1 --- [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+accounts-ms       | 2024-02-09T08:30:08.255Z  INFO 1 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+loans-ms          | 2024-02-09T08:30:08.290Z  INFO 1 --- [  restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+accounts-ms       | 2024-02-09T08:30:08.362Z  INFO 1 --- [  restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+loans-ms          | 2024-02-09T08:30:09.499Z  INFO 1 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+accounts-ms       | 2024-02-09T08:30:09.508Z  INFO 1 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+accounts-ms       | 2024-02-09T08:30:09.814Z  INFO 1 --- [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+loans-ms          | 2024-02-09T08:30:09.826Z  INFO 1 --- [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+loans-ms          | 2024-02-09T08:30:09.849Z  INFO 1 --- [  restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+accounts-ms       | 2024-02-09T08:30:09.850Z  INFO 1 --- [  restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+cards-ms          | 2024-02-09T08:30:10.255Z  INFO 1 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+cards-ms          | Hibernate: alter table if exists cards alter column card_id set data type bigint
+cards-ms          | Hibernate: alter table if exists cards alter column created_at set data type timestamp(6)
+cards-ms          | Hibernate: alter table if exists cards alter column created_by set data type varchar(255)
+cards-ms          | Hibernate: alter table if exists cards alter column updated_at set data type timestamp(6)
+cards-ms          | Hibernate: alter table if exists cards alter column updated_by set data type varchar(255)
+cards-ms          | Hibernate: alter table if exists cards alter column card_number set data type varchar(255)
+cards-ms          | Hibernate: alter table if exists cards alter column card_type set data type varchar(255)
+cards-ms          | Hibernate: alter table if exists cards alter column mobile_number set data type varchar(255)
+accounts-ms       | 2024-02-09T08:30:10.674Z  INFO 1 --- [  restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+cards-ms          | 2024-02-09T08:30:10.677Z  INFO 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+loans-ms          | 2024-02-09T08:30:10.709Z  INFO 1 --- [  restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+loans-ms          | 2024-02-09T08:30:11.507Z  INFO 1 --- [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+accounts-ms       | 2024-02-09T08:30:11.545Z  INFO 1 --- [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+loans-ms          | 2024-02-09T08:30:12.979Z  INFO 1 --- [  restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+accounts-ms       | 2024-02-09T08:30:13.109Z  INFO 1 --- [  restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+cards-ms          | 2024-02-09T08:30:15.436Z  WARN 1 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+accounts-ms       | 2024-02-09T08:30:17.895Z  INFO 1 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+loans-ms          | 2024-02-09T08:30:17.904Z  INFO 1 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+loans-ms          | Hibernate: alter table if exists loans alter column loan_id set data type bigint
+loans-ms          | Hibernate: alter table if exists loans alter column created_at set data type timestamp(6)
+loans-ms          | Hibernate: alter table if exists loans alter column created_by set data type varchar(255)
+loans-ms          | Hibernate: alter table if exists loans alter column updated_at set data type timestamp(6)
+accounts-ms       | Hibernate: alter table if exists accounts alter column account_number set data type bigint
+loans-ms          | Hibernate: alter table if exists loans alter column updated_by set data type varchar(255)
+loans-ms          | Hibernate: alter table if exists loans alter column loan_number set data type varchar(255)
+loans-ms          | Hibernate: alter table if exists loans alter column loan_type set data type varchar(255)
+loans-ms          | Hibernate: alter table if exists loans alter column mobile_number set data type varchar(255)
+loans-ms          | 2024-02-09T08:30:18.276Z  INFO 1 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+accounts-ms       | Hibernate: alter table if exists accounts alter column created_at set data type timestamp(6)
+accounts-ms       | Hibernate: alter table if exists accounts alter column created_by set data type varchar(255)
+accounts-ms       | Hibernate: alter table if exists accounts alter column updated_at set data type timestamp(6)
+accounts-ms       | Hibernate: alter table if exists accounts alter column updated_by set data type varchar(255)
+accounts-ms       | Hibernate: alter table if exists accounts alter column account_type set data type varchar(255)
+accounts-ms       | Hibernate: alter table if exists accounts alter column branch_address set data type varchar(255)
+accounts-ms       | Hibernate: alter table if exists accounts alter column customer_id set data type bigint
+accounts-ms       | Hibernate: alter table if exists customer alter column customer_id set data type bigint
+accounts-ms       | Hibernate: alter table if exists customer alter column created_at set data type timestamp(6)
+accounts-ms       | Hibernate: alter table if exists customer alter column created_by set data type varchar(255)
+accounts-ms       | Hibernate: alter table if exists customer alter column updated_at set data type timestamp(6)
+accounts-ms       | Hibernate: alter table if exists customer alter column updated_by set data type varchar(255)
+accounts-ms       | Hibernate: alter table if exists customer alter column email set data type varchar(255)
+accounts-ms       | Hibernate: alter table if exists customer alter column mobile_number set data type varchar(255)
+accounts-ms       | Hibernate: alter table if exists customer alter column name set data type varchar(255)
+accounts-ms       | 2024-02-09T08:30:18.647Z  INFO 1 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+loans-ms          | 2024-02-09T08:30:22.323Z  WARN 1 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+accounts-ms       | 2024-02-09T08:30:22.373Z  WARN 1 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+cards-ms          | 2024-02-09T08:30:22.572Z  INFO 1 --- [           main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'cards.springCloudBusInput' has 1 subscriber(s).
+cards-ms          | 2024-02-09T08:30:23.663Z  INFO 1 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 21 endpoint(s) beneath base path '/actuator'
+cards-ms          | 2024-02-09T08:30:24.400Z  INFO 1 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+cards-ms          | 2024-02-09T08:30:24.419Z  INFO 1 --- [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'cards.errorChannel' has 1 subscriber(s).
+cards-ms          | 2024-02-09T08:30:24.420Z  INFO 1 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+cards-ms          | 2024-02-09T08:30:24.660Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+cards-ms          | 2024-02-09T08:30:24.707Z  INFO 1 --- [           main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
+cards-ms          | 2024-02-09T08:30:24.717Z  INFO 1 --- [           main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
+cards-ms          | 2024-02-09T08:30:25.061Z  INFO 1 --- [           main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
+cards-ms          | 2024-02-09T08:30:25.272Z  INFO 1 --- [           main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.aSFvSewgQHGWB7ZJUaZprA, bound to: springCloudBus
+cards-ms          | 2024-02-09T08:30:25.311Z  INFO 1 --- [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbit:5672]
+default-rabbit-1  | 2024-02-09 08:30:25.385145+00:00 [info] <0.864.0> accepting AMQP connection <0.864.0> (172.22.0.6:51402 -> 172.22.0.2:5672)
+default-rabbit-1  | 2024-02-09 08:30:25.533056+00:00 [info] <0.864.0> connection <0.864.0> (172.22.0.6:51402 -> 172.22.0.2:5672) has a client-provided name: rabbitConnectionFactory#508863eb:0
+default-rabbit-1  | 2024-02-09 08:30:25.562676+00:00 [info] <0.864.0> connection <0.864.0> (172.22.0.6:51402 -> 172.22.0.2:5672 - rabbitConnectionFactory#508863eb:0): user 'guest' authenticated and granted access to vhost '/'
+cards-ms          | 2024-02-09T08:30:25.599Z  INFO 1 --- [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#508863eb:0/SimpleConnection@7db644d5 [delegate=amqp://guest@172.22.0.2:5672/, localPort=51402]
+cards-ms          | 2024-02-09T08:30:25.835Z  INFO 1 --- [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-933035127.springCloudBusInput.errors' has 1 subscriber(s).
+cards-ms          | 2024-02-09T08:30:25.848Z  INFO 1 --- [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-933035127.springCloudBusInput.errors' has 2 subscriber(s).
+cards-ms          | 2024-02-09T08:30:25.996Z  INFO 1 --- [           main] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.aSFvSewgQHGWB7ZJUaZprA'
+cards-ms          | 2024-02-09T08:30:26.279Z  INFO 1 --- [           main] com.eazybank.cards.CardsApplication      : Started CardsApplication in 51.8 seconds (process running for 54.111)
+accounts-ms       | 2024-02-09T08:30:27.810Z  INFO 1 --- [  restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'accounts.springCloudBusInput' has 1 subscriber(s).
+loans-ms          | 2024-02-09T08:30:28.283Z  INFO 1 --- [  restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'loans.springCloudBusInput' has 1 subscriber(s).
+accounts-ms       | 2024-02-09T08:30:28.913Z  INFO 1 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+accounts-ms       | 2024-02-09T08:30:29.169Z  INFO 1 --- [  restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 21 endpoint(s) beneath base path '/actuator'
+loans-ms          | 2024-02-09T08:30:29.279Z  INFO 1 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+loans-ms          | 2024-02-09T08:30:29.404Z  INFO 1 --- [  restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 21 endpoint(s) beneath base path '/actuator'
+accounts-ms       | 2024-02-09T08:30:29.715Z  INFO 1 --- [  restartedMain] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+accounts-ms       | 2024-02-09T08:30:29.715Z  INFO 1 --- [  restartedMain] o.s.i.channel.PublishSubscribeChannel    : Channel 'accounts.errorChannel' has 1 subscriber(s).
+accounts-ms       | 2024-02-09T08:30:29.734Z  INFO 1 --- [  restartedMain] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+accounts-ms       | 2024-02-09T08:30:29.957Z  INFO 1 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+accounts-ms       | 2024-02-09T08:30:30.022Z  INFO 1 --- [  restartedMain] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
+accounts-ms       | 2024-02-09T08:30:30.022Z  INFO 1 --- [  restartedMain] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
+loans-ms          | 2024-02-09T08:30:30.106Z  INFO 1 --- [  restartedMain] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+loans-ms          | 2024-02-09T08:30:30.107Z  INFO 1 --- [  restartedMain] o.s.i.channel.PublishSubscribeChannel    : Channel 'loans.errorChannel' has 1 subscriber(s).
+loans-ms          | 2024-02-09T08:30:30.119Z  INFO 1 --- [  restartedMain] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+loans-ms          | 2024-02-09T08:30:30.252Z  INFO 1 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+loans-ms          | 2024-02-09T08:30:30.290Z  INFO 1 --- [  restartedMain] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
+loans-ms          | 2024-02-09T08:30:30.297Z  INFO 1 --- [  restartedMain] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
+accounts-ms       | 2024-02-09T08:30:30.556Z  INFO 1 --- [  restartedMain] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
+loans-ms          | 2024-02-09T08:30:30.682Z  INFO 1 --- [  restartedMain] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
+accounts-ms       | 2024-02-09T08:30:30.804Z  INFO 1 --- [  restartedMain] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.IKQrgTpORXeFMzfQlmclVA, bound to: springCloudBus
+accounts-ms       | 2024-02-09T08:30:30.861Z  INFO 1 --- [  restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbit:5672]
+default-rabbit-1  | 2024-02-09 08:30:30.925136+00:00 [info] <0.884.0> accepting AMQP connection <0.884.0> (172.22.0.4:44000 -> 172.22.0.2:5672)
+loans-ms          | 2024-02-09T08:30:30.933Z  INFO 1 --- [  restartedMain] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.mnFuze4VSmC8wBZn6R1mdw, bound to: springCloudBus
+loans-ms          | 2024-02-09T08:30:30.988Z  INFO 1 --- [  restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbit:5672]
+default-rabbit-1  | 2024-02-09 08:30:31.039627+00:00 [info] <0.887.0> accepting AMQP connection <0.887.0> (172.22.0.5:59556 -> 172.22.0.2:5672)
+default-rabbit-1  | 2024-02-09 08:30:31.092857+00:00 [info] <0.884.0> connection <0.884.0> (172.22.0.4:44000 -> 172.22.0.2:5672) has a client-provided name: rabbitConnectionFactory#173ab477:0
+default-rabbit-1  | 2024-02-09 08:30:31.121185+00:00 [info] <0.884.0> connection <0.884.0> (172.22.0.4:44000 -> 172.22.0.2:5672 - rabbitConnectionFactory#173ab477:0): user 'guest' authenticated and granted access to vhost '/'
+accounts-ms       | 2024-02-09T08:30:31.152Z  INFO 1 --- [  restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#173ab477:0/SimpleConnection@c25fbdf [delegate=amqp://guest@172.22.0.2:5672/, localPort=44000]
+default-rabbit-1  | 2024-02-09 08:30:31.236732+00:00 [info] <0.887.0> connection <0.887.0> (172.22.0.5:59556 -> 172.22.0.2:5672) has a client-provided name: rabbitConnectionFactory#1d6fc09f:0
+default-rabbit-1  | 2024-02-09 08:30:31.251020+00:00 [info] <0.887.0> connection <0.887.0> (172.22.0.5:59556 -> 172.22.0.2:5672 - rabbitConnectionFactory#1d6fc09f:0): user 'guest' authenticated and granted access to vhost '/'
+loans-ms          | 2024-02-09T08:30:31.272Z  INFO 1 --- [  restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#1d6fc09f:0/SimpleConnection@203bc699 [delegate=amqp://guest@172.22.0.2:5672/, localPort=59556]
+accounts-ms       | 2024-02-09T08:30:31.425Z  INFO 1 --- [  restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-124156790.springCloudBusInput.errors' has 1 subscriber(s).
+accounts-ms       | 2024-02-09T08:30:31.436Z  INFO 1 --- [  restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-124156790.springCloudBusInput.errors' has 2 subscriber(s).
+loans-ms          | 2024-02-09T08:30:31.513Z  INFO 1 --- [  restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-1482705739.springCloudBusInput.errors' has 1 subscriber(s).
+loans-ms          | 2024-02-09T08:30:31.516Z  INFO 1 --- [  restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-1482705739.springCloudBusInput.errors' has 2 subscriber(s).
+accounts-ms       | 2024-02-09T08:30:31.532Z  INFO 1 --- [  restartedMain] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.IKQrgTpORXeFMzfQlmclVA'
+loans-ms          | 2024-02-09T08:30:31.595Z  INFO 1 --- [  restartedMain] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.mnFuze4VSmC8wBZn6R1mdw'
+accounts-ms       | 2024-02-09T08:30:31.775Z  INFO 1 --- [  restartedMain] c.eazybank.accounts.AccountsApplication  : Started AccountsApplication in 56.035 seconds (process running for 59.936)
+loans-ms          | 2024-02-09T08:30:31.811Z  INFO 1 --- [  restartedMain] com.eazybank.loans.LoansApplication        : Started LoansApplication in 56.151 seconds (process running for 59.766)
+accounts-ms       | 2024-02-09T08:32:48.266Z  INFO 1 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+accounts-ms       | 2024-02-09T08:32:48.268Z  INFO 1 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+accounts-ms       | 2024-02-09T08:32:48.282Z  INFO 1 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+accounts-ms       | Hibernate: select c1_0.customer_id,c1_0.created_at,c1_0.created_by,c1_0.email,c1_0.mobile_number,c1_0.name,c1_0.updated_at,c1_0.updated_by from customer c1_0 where c1_0.mobile_number=?
+accounts-ms       | Hibernate: insert into customer (created_at,created_by,email,mobile_number,name,customer_id) values (?,?,?,?,?,default)
+accounts-ms       | Hibernate: select a1_0.account_number,a1_0.account_type,a1_0.branch_address,a1_0.created_at,a1_0.created_by,a1_0.customer_id,a1_0.updated_at,a1_0.updated_by from accounts a1_0 where a1_0.account_number=?
+accounts-ms       | Hibernate: insert into accounts (account_type,branch_address,created_at,created_by,customer_id,account_number) values (?,?,?,?,?,?)
+accounts-ms       | Hibernate: select c1_0.customer_id,c1_0.created_at,c1_0.created_by,c1_0.email,c1_0.mobile_number,c1_0.name,c1_0.updated_at,c1_0.updated_by from customer c1_0 where c1_0.mobile_number=?
+accounts-ms       | Hibernate: select a1_0.account_number,a1_0.account_type,a1_0.branch_address,a1_0.created_at,a1_0.created_by,a1_0.customer_id,a1_0.updated_at,a1_0.updated_by from accounts a1_0 where a1_0.customer_id=?
+cards-ms          | 2024-02-09T08:33:22.031Z  INFO 1 --- [nio-9000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+cards-ms          | 2024-02-09T08:33:22.032Z  INFO 1 --- [nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+cards-ms          | 2024-02-09T08:33:22.044Z  INFO 1 --- [nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+cards-ms          | Hibernate: select c1_0.card_id,c1_0.amount_used,c1_0.available_amount,c1_0.card_number,c1_0.card_type,c1_0.created_at,c1_0.created_by,c1_0.mobile_number,c1_0.total_limit,c1_0.updated_at,c1_0.updated_by from cards c1_0 where c1_0.mobile_number=?
+cards-ms          | Hibernate: insert into cards (amount_used,available_amount,card_number,card_type,created_at,created_by,mobile_number,total_limit,card_id) values (?,?,?,?,?,?,?,?,default)
+cards-ms          | Hibernate: select c1_0.card_id,c1_0.amount_used,c1_0.available_amount,c1_0.card_number,c1_0.card_type,c1_0.created_at,c1_0.created_by,c1_0.mobile_number,c1_0.total_limit,c1_0.updated_at,c1_0.updated_by from cards c1_0 where c1_0.mobile_number=?
+loans-ms          | 2024-02-09T08:33:40.438Z  INFO 1 --- [nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+loans-ms          | 2024-02-09T08:33:40.446Z  INFO 1 --- [nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+loans-ms          | 2024-02-09T08:33:40.475Z  INFO 1 --- [nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 27 ms
+loans-ms          | Hibernate: select l1_0.loan_id,l1_0.amount_paid,l1_0.created_at,l1_0.created_by,l1_0.loan_number,l1_0.loan_type,l1_0.mobile_number,l1_0.outstanding_amount,l1_0.total_loan,l1_0.updated_at,l1_0.updated_by from loans l1_0 where l1_0.mobile_number=?
+loans-ms          | Hibernate: insert into loans (amount_paid,created_at,created_by,loan_number,loan_type,mobile_number,outstanding_amount,total_loan,loan_id) values (?,?,?,?,?,?,?,?,default)
+Gracefully stopping... (press Ctrl+C again to force)
+Aborting on container exit...
+[+] Stopping 0/3
+[+] Stopping 0/3ds-ms     Stopping                                                                                                                           0.3s
+ - Container cards-ms     Stopping                                                                                                                           0.4s
+ - Container accounts-ms  Stopping                                                                                                                           0.4s
+ - Container loans-ms     Stopping                                                                                                                           0.4s
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\docker-compose\default> ^C
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\docker-compose\default> docker compose down
+[+] Running 6/6
+ ✔ Container cards-ms          Removed                                                                                                                       0.0s
+ ✔ Container accounts-ms       Removed                                                                                                                       0.0s
+ ✔ Container loans-ms          Removed                                                                                                                       0.0s
+ ✔ Container configserver-ms   Removed                                                                                                                       3.2s
+ ✔ Container default-rabbit-1  Removed                                                                                                                       8.2s
+ ✔ Network default_eazybank    Removed                                                                                                                       0.4s
+PS D:\test-Microservices-git\springboot-microservice\busRefreshProperty\docker-compose\default>
+

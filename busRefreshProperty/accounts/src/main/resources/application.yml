@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   application:
-    name: "account"
+    name: "accounts"
   profiles:
     active: "prod"
   datasource:
@@ -13,22 +13,21 @@ spring:
   h2:
     console:
       enabled: true
-      settings:
-        web-allow-others: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
   config:
     import: "optional:configserver:http://localhost:8071/"
-
-rabbitmq:
-  host: "localhost"
-  port: 5672
-  username: "guest"
-  password: "guest"
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-
-build:
-  version: "1.0"

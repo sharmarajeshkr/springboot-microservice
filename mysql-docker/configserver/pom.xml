@@ -64,7 +64,7 @@
 				<version>3.3.2</version>
 				<configuration>
 					<to>
-						<image>sharma/${project.artifactId}:s6</image>
+						<image>rajeshsharma9616/${project.artifactId}:s7</image>
 					</to>
 				</configuration>
 			</plugin>

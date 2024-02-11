@@ -1,12 +1,12 @@
 package com.eazybank.loans.service.impl;
 
 import com.eazybank.loans.constants.LoansConstants;
+import com.eazybank.loans.dto.LoansDto;
 import com.eazybank.loans.entity.Loans;
 import com.eazybank.loans.exception.LoanAlreadyExistsException;
 import com.eazybank.loans.exception.ResourceNotFoundException;
 import com.eazybank.loans.mapper.LoansMapper;
 import com.eazybank.loans.repository.LoansRepository;
-import com.eazybank.loans.dto.LoansDto;
 import com.eazybank.loans.service.ILoansService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

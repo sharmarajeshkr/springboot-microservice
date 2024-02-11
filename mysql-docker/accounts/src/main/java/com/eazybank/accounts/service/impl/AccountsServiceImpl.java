@@ -1,14 +1,14 @@
 package com.eazybank.accounts.service.impl;
 
 import com.eazybank.accounts.constants.AccountsConstants;
-import com.eazybank.accounts.entity.Accounts;
-import com.eazybank.accounts.mapper.AccountsMapper;
-import com.eazybank.accounts.mapper.CustomerMapper;
 import com.eazybank.accounts.dto.AccountsDto;
 import com.eazybank.accounts.dto.CustomerDto;
+import com.eazybank.accounts.entity.Accounts;
 import com.eazybank.accounts.entity.Customer;
 import com.eazybank.accounts.exception.CustomerAlreadyExistsException;
 import com.eazybank.accounts.exception.ResourceNotFoundException;
+import com.eazybank.accounts.mapper.AccountsMapper;
+import com.eazybank.accounts.mapper.CustomerMapper;
 import com.eazybank.accounts.repository.AccountsRepository;
 import com.eazybank.accounts.repository.CustomerRepository;
 import com.eazybank.accounts.service.IAccountsService;

@@ -4,17 +4,16 @@ spring:
   application:
     name: "loans"
   profiles:
-    active: "default"
+    active: "prod"
   datasource:
-    url: jdbc:mysql://localhost:3308/loansdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/loansdb
     username: root
     password: root
   jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
-    hibernate:
-      ddl-auto: update
     show-sql: true
+  sql:
+    init:
+      mode: always
   config:
     import: "optional:configserver:http://localhost:8071/"
 

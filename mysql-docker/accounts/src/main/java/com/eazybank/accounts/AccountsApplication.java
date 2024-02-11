@@ -12,9 +12,9 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
-/*@ComponentScans({ @ComponentScan("com.sharma.accounts.controller") })
-@EnableJpaRepositories("com.sharma.accounts.repository")
-@EntityScan("com.sharma.accounts.model")*/
+/*@ComponentScans({ @ComponentScan("com.eazybank.accounts.controller") })
+@EnableJpaRepositories("com.eazybank.accounts.repository")
+@EntityScan("com.eazybank.accounts.model")*/
 @EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
 @EnableConfigurationProperties(value = {AccountsContactInfoDto.class})
 @OpenAPIDefinition(
@@ -24,17 +24,17 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 				version = "v1",
 				contact = @Contact(
 						name = "Madan Reddy",
-						email = "tutor@sharma.com",
-						url = "https://www.sharma.com"
+						email = "tutor@eazybytes.com",
+						url = "https://www.eazybytes.com"
 				),
 				license = @License(
 						name = "Apache 2.0",
-						url = "https://www.sharma.com"
+						url = "https://www.eazybytes.com"
 				)
 		),
 		externalDocs = @ExternalDocumentation(
 				description =  "EazyBank Accounts microservice REST API Documentation",
-				url = "https://www.sharma.com/swagger-ui.html"
+				url = "https://www.eazybytes.com/swagger-ui.html"
 		)
 )
 public class AccountsApplication {

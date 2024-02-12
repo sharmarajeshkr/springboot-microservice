@@ -3,10 +3,6 @@
 URL : 
 https://stackoverflow.com/questions/42567475/docker-compose-check-if-mysql-connection-is-ready
 
-**Terminology Used**
-
-![img_6.png](img_6.png)
-
 **Discovery Server**
 
 ![img.png](img.png)
@@ -24,3 +20,7 @@ https://stackoverflow.com/questions/42567475/docker-compose-check-if-mysql-conne
 **Load Balancer**
 
 ![img_5.png](img_5.png)
+
+**Terminology Used**
+
+![img_6.png](img_6.png)

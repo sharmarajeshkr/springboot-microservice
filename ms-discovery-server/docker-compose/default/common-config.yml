@@ -37,8 +37,8 @@ services:
       SPRING_DATASOURCE_PASSWORD: root
 
   microservice-discoveryserver-config:
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
     extends:
       service: microservice-configserver-config
-    depends_on:
-      eurkaserver:
-        condition: service_healthy

@@ -44,11 +44,17 @@ services:
       file: common-config.yml
       service: microservice-base-config
 
-  eurkaserver:
-    image: "rajeshsharma9616/eurekaserver:s1"
+  eurekaserver:
+    image: "rajeshsharma9616/eurkeserver:s1"
     container_name: eurekaserver
     ports:
       - "8070:8070"
+    healthcheck:
+      test: "curl --fail --silent localhost:8070/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     environment:
       SPRING_APPLICATION_NAME: "eurekaserver"
     depends_on:
@@ -56,7 +62,7 @@ services:
         condition: service_healthy
     extends:
       file: common-config.yml
-      service: microservice-discoveryserver-config
+      service: microservice-configserver-config
 
   accounts:
     image: "rajeshsharma9616/accounts:s1"

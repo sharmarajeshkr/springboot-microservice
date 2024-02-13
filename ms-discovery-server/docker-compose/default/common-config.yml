@@ -35,3 +35,10 @@ services:
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
+
+  microservice-discoveryserver-config:
+    extends:
+      service: microservice-configserver-config
+    depends_on:
+      eurkaserver:
+        condition: service_healthy

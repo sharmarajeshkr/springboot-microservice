@@ -1,8 +1,3 @@
-**Health Check Details**
-
-URL : 
-https://stackoverflow.com/questions/42567475/docker-compose-check-if-mysql-connection-is-ready
-
 **Discovery Server**
 
 ![img.png](img.png)

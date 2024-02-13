@@ -20,7 +20,7 @@
 
 ![img_6.png](img_6.png)
 
-**Spring Cloud Support for Client-side Service Discovery**
+## Spring Cloud Support for Client-side Service Discovery
 ![img_7.png](img_7.png)
 
 ## Steps

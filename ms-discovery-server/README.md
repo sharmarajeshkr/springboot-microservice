@@ -37,4 +37,5 @@ docker run -p 3308:3306 --name cardsdb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATA
 - Start Discovery Server once config server Start--> Dependency
 - Start Microservice once Discovery Server Start--> Dependency
 
-
+## Eureka Self Preservation
+![img_8.png](img_8.png)

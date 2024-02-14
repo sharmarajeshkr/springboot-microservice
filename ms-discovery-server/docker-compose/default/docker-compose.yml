@@ -46,7 +46,7 @@ services:
 
   eurekaserver:
     image: "rajeshsharma9616/eurkeserver:s1"
-    container_name: eurekaserver
+    container_name: eurekaserver-ms
     ports:
       - "8070:8070"
     healthcheck:
@@ -55,14 +55,15 @@ services:
       timeout: 5s
       retries: 10
       start_period: 10s
-    environment:
-      SPRING_APPLICATION_NAME: "eurekaserver"
+    extends:
+      file: common-config.yml
+      service: microservice-base-config
     depends_on:
       configserver:
         condition: service_healthy
-    extends:
-      file: common-config.yml
-      service: microservice-configserver-config
+    environment:
+      SPRING_APPLICATION_NAME: "eurekaserver"
+
 
   accounts:
     image: "rajeshsharma9616/accounts:s1"
@@ -77,7 +78,7 @@ services:
         condition: service_healthy
     extends:
       file: common-config.yml
-      service: microservice-discoveryserver-config
+      service: microservice-configserver-config
 
   loans:
     image: "rajeshsharma9616/loans:s1"
@@ -92,7 +93,7 @@ services:
         condition: service_healthy
     extends:
       file: common-config.yml
-      service: microservice-discoveryserver-config
+      service: microservice-configserver-config
 
   cards:
     image: "rajeshsharma9616/cards:s1"
@@ -107,7 +108,7 @@ services:
         condition: service_healthy
     extends:
       file: common-config.yml
-      service: microservice-discoveryserver-config
+      service: microservice-configserver-config
 
 networks:
   eazybank:

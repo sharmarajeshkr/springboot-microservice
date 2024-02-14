@@ -1,6 +1,7 @@
 package com.eazybank.accounts.service.impl;
 
 import com.eazybank.accounts.dto.AccountsDto;
+import com.eazybank.accounts.dto.CardsDto;
 import com.eazybank.accounts.dto.CustomerDetailsDto;
 import com.eazybank.accounts.dto.LoansDto;
 import com.eazybank.accounts.entity.Accounts;
@@ -34,20 +35,26 @@ public class CustomerServiceImpl implements ICustomerDetailsService {
                 () -> new ResourceNotFoundException("Customer", "mobileNumber", mobileNumber)
         );
 
-
+        CustomerDetailsDto customerDetailsDto = CustomerMapper.mapToCustomerDetailsDto(customer, new CustomerDetailsDto());
 
         Accounts accounts = accountsRepository.findByCustomerId(customer.getCustomerId()).orElseThrow(
                 () -> new ResourceNotFoundException("Account", "customerId", customer.getCustomerId().toString())
         );
-
-        CustomerDetailsDto customerDetailsDto = CustomerMapper.mapToCustomerDetailsDto(customer, new CustomerDetailsDto());
         AccountsDto accountsDto = AccountsMapper.mapToAccountsDto(accounts, new AccountsDto());
 
-        customerDetailsDto.set
+        // Setting Accounts Details to Customer Details
+        customerDetailsDto.setAccountsDto(accountsDto);
 
-        ResponseEntity<LoansDto> loansDtoResponseEntity =  loansFeignClient.fetchLoanDetails(mobileNumber);
+        // Get Loans Details using Feign Client
+        ResponseEntity<LoansDto> loansDtoResponseEntity = loansFeignClient.fetchLoanDetails(mobileNumber);
+        // Setting Loans Details to Customer Details
+        customerDetailsDto.setLoansDto(loansDtoResponseEntity.getBody());
 
+        // Get Cards Details using Feign Client
+        ResponseEntity<CardsDto> cardsDtoResponseEntity = cardsFeignClient.fetchCardDetails(mobileNumber);
+        customerDetailsDto.setCardsDto(cardsDtoResponseEntity.getBody());
 
-        return null;
+        // Used Aggregator Pattern to collect details from multiple MS
+        return customerDetailsDto;
     }
 }

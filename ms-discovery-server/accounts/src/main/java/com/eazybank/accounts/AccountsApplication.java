@@ -9,12 +9,17 @@ import io.swagger.v3.oas.annotations.info.License;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
-/*@ComponentScans({ @ComponentScan("com.eazybank.accounts.controller") })
+
+/*
+@ComponentScans({ @ComponentScan("com.eazybank.accounts.controller") })
 @EnableJpaRepositories("com.eazybank.accounts.repository")
-@EntityScan("com.eazybank.accounts.model")*/
+@EntityScan("com.eazybank.accounts.model")
+*/
+@EnableFeignClients
 @EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
 @EnableConfigurationProperties(value = {AccountsContactInfoDto.class})
 @OpenAPIDefinition(

@@ -1,15 +1,17 @@
 spring:
   application:
     name: "gatewayserver"
+  ## Configuration Server
   config:
     import: "optional:configserver:http://localhost:8071/"
-  # Cloud Properties
+  # Spring Cloud Properties
   cloud:
     gateway:
       discovery:
+        ## use false, If don't want spring cloud provide Route, This will read from configuration file
         locator:
-          enabled: true
-    # Management properties
+          enabled: false
+        # Management properties
           lowerCaseServiceId: true
 
 # Management properties
@@ -17,6 +19,7 @@ management:
   endpoints:
     web:
       exposure:
+        ## Exposing all
         include: "*"
   endpoint:
     gateway:
@@ -32,3 +35,9 @@ info:
     description: "Eazy Bank Gateway Server Application"
     version: "1.0.0"
 
+# Application Logging
+logging:
+  level:
+    com:
+      eazybank:
+        gatewayserver: DEBUG

@@ -28,8 +28,9 @@ public class CustomerServiceImpl implements ICustomerDetailsService {
     private CardsFeignClient cardsFeignClient;
     private LoansFeignClient loansFeignClient;
 
+
     @Override
-    public CustomerDetailsDto fetchCustomerDetails(String mobileNumber) {
+    public CustomerDetailsDto fetchCustomerDetails(String correlationId, String mobileNumber) {
 
         Customer customer = customerRepository.findByMobileNumber(mobileNumber).orElseThrow(
                 () -> new ResourceNotFoundException("Customer", "mobileNumber", mobileNumber)
@@ -46,12 +47,12 @@ public class CustomerServiceImpl implements ICustomerDetailsService {
         customerDetailsDto.setAccountsDto(accountsDto);
 
         // Get Loans Details using Feign Client
-        ResponseEntity<LoansDto> loansDtoResponseEntity = loansFeignClient.fetchLoanDetails(mobileNumber);
+        ResponseEntity<LoansDto> loansDtoResponseEntity = loansFeignClient.fetchLoanDetails(correlationId, mobileNumber);
         // Setting Loans Details to Customer Details
         customerDetailsDto.setLoansDto(loansDtoResponseEntity.getBody());
 
         // Get Cards Details using Feign Client
-        ResponseEntity<CardsDto> cardsDtoResponseEntity = cardsFeignClient.fetchCardDetails(mobileNumber);
+        ResponseEntity<CardsDto> cardsDtoResponseEntity = cardsFeignClient.fetchCardDetails(correlationId, mobileNumber);
         customerDetailsDto.setCardsDto(cardsDtoResponseEntity.getBody());
 
         // Used Aggregator Pattern to collect details from multiple MS

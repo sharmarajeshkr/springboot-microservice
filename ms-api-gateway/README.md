@@ -56,3 +56,5 @@ docker run -p 3308:3306 --name cardsdb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATA
 - Start Microservice once Discovery Server Start
 - Start Gateway Server
 
+## All Requests
+[Microservices.postman_collection.json](Microservices.postman_collection.json)

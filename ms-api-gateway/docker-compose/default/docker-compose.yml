@@ -30,7 +30,7 @@ services:
       service: microservice-db-config
 
   configserver:
-    image: "rajeshsharma9616/configserver:s1"
+    image: "rajeshsharma9616/configserver:s2"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -45,7 +45,7 @@ services:
       service: microservice-base-config
 
   eurekaserver:
-    image: "rajeshsharma9616/eurkeserver:s1"
+    image: "rajeshsharma9616/eurekaserver:s2"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -61,12 +61,17 @@ services:
     environment:
       SPRING_APPLICATION_NAME: "eurekaserver"
 
-
   accounts:
-    image: "rajeshsharma9616/accounts:s1"
+    image: "rajeshsharma9616/accounts:s2"
     container_name: accounts-ms
     ports:
       - "8080:8080"
+    healthcheck:
+      test: "curl --fail --silent localhost:8080/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     environment:
       SPRING_APPLICATION_NAME: "accounts"
       SPRING_DATASOURCE_URL: "jdbc:mysql://accountsdb:3306/accountsdb"
@@ -78,25 +83,16 @@ services:
       service: microservice-eureka-config
 
   loans:
-    image: "rajeshsharma9616/loans:s1"
+    image: "rajeshsharma9616/loans:s2"
     container_name: loans-ms
     ports:
       - "8090:8090"
-    environment:
-      SPRING_APPLICATION_NAME: "loans"
-      SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb:3306/loansdb"
-    depends_on:
-      loansdb:
-        condition: service_healthy
-    extends:
-      file: common-config.yml
-      service: microservice-eureka-config
-
-  loans1:
-    image: "rajeshsharma9616/loans:s1"
-    container_name: loans-ms-1
-    ports:
-      - "8091:8090"
+    healthcheck:
+      test: "curl --fail --silent localhost:8090/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     environment:
       SPRING_APPLICATION_NAME: "loans"
       SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb:3306/loansdb"
@@ -108,10 +104,16 @@ services:
       service: microservice-eureka-config
 
   cards:
-    image: "rajeshsharma9616/cards:s1"
+    image: "rajeshsharma9616/cards:s2"
     container_name: cards-ms
     ports:
       - "9000:9000"
+    healthcheck:
+      test: "curl --fail --silent localhost:9000/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     environment:
       SPRING_APPLICATION_NAME: "cards"
       SPRING_DATASOURCE_URL: "jdbc:mysql://cardsdb:3306/cardsdb"
@@ -122,20 +124,24 @@ services:
       file: common-config.yml
       service: microservice-eureka-config
 
-  cards1:
-    image: "rajeshsharma9616/cards:s1"
-    container_name: cards-ms-1
+  gatewayserver:
+    image: "rajeshsharma9616/gatewayserver:s2"
+    container_name: gatewayserver-ms
     ports:
-      - "9001:9000"
-    environment:
-      SPRING_APPLICATION_NAME: "cards"
-      SPRING_DATASOURCE_URL: "jdbc:mysql://cardsdb:3306/cardsdb"
-    depends_on:
-      cardsdb:
-        condition: service_healthy
+      - "8072:8072"
     extends:
       file: common-config.yml
       service: microservice-eureka-config
+    environment:
+      SPRING_APPLICATION_NAME: "gatewayserver"
+    depends_on:
+      accounts:
+        condition: service_healthy
+      loans:
+        condition: service_healthy
+      cards:
+        condition: service_healthy
+
 
 networks:
   eazybank:

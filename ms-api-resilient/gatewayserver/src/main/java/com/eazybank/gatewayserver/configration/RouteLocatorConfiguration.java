@@ -1,5 +1,6 @@
 package com.eazybank.gatewayserver.configration;
 
+import com.eazybank.gatewayserver.constant.ConfigConstant;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
@@ -16,9 +17,10 @@ public class RouteLocatorConfiguration {
         return builder.routes()
                 // Route For Account MS
                 .route(p -> p.path("/eazybank/accounts/**")
-
                         .filters(f -> f.rewritePath("/eazybank/accounts/(?<segment>.*)", "/${segment}")
                                 .addRequestHeader("X-Response-Time", LocalDateTime.now().toString())
+                                .circuitBreaker(config -> config.setName(
+                                        String.valueOf(ConfigConstant.ACCOUNTCIRCUTBREAKER)))
                         )
                         .uri("lb://ACCOUNTS")
                 )

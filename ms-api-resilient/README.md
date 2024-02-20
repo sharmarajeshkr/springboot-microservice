@@ -1,6 +1,10 @@
 
 ## Spring Cloud Official Document
 - https://spring.io/projects/spring-cloud-circuitbreaker
+- https://cloud.spring.io/spring-cloud-static/spring-cloud-circuitbreaker/1.0.2.RELEASE/reference/html/
+
+## Resilience4j Official Document
+- https://resilience4j.readme.io/docs/getting-started-3
 
 ## Problem
 - ![img_2.png](img_2.png)
@@ -9,8 +13,20 @@
 - ![img.png](img.png)
 - ![img_1.png](img_1.png)
 
-## Steps to create Spring Cloud Gateway 
-- 
+## Circuit Breaker Pattern
+- ![img_3.png](img_3.png)
+
+
+## Circuit Breaker Pattern Implementation
+Dependency
+```shell
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
+    </dependency>
+```
+- ![img_4.png](img_4.png)
+- ![img_6.png](img_6.png)
 
 ## After Starting all Services in Sequence 
 - Start Config Server

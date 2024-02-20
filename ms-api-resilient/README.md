@@ -31,11 +31,17 @@ Implementation for MicroService
 - https://docs.spring.io/spring-cloud-openfeign/docs/current/reference/html/#spring-cloud-feign-circuitbreaker
 - ![img_6.png](img_6.png)
 
+## HTTP Timeout Configuration
+https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/http-timeouts-configuration.html
+
+
 ## After Starting all Services in Sequence 
 - Start Config Server
 - Start Eureka Discovery Server once config server Start
 - Start Microservice once Discovery Server Start
 - Start Gateway Server
 
+## Fetch Customer Details
+![img_5.png](img_5.png)
 ## All Requests
 [Microservices.postman_collection.json](Microservices.postman_collection.json)

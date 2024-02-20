@@ -4,7 +4,7 @@ spring:
   ## Configuration Server
   config:
     import: "optional:configserver:http://localhost:8071/"
-  # Spring Cloud Properties
+  # Spring Cloud Properties Global Configuration
   cloud:
     gateway:
       discovery:
@@ -13,6 +13,11 @@ spring:
           enabled: false
         # Management properties
           lowerCaseServiceId: true
+      ## Http Timeout properties
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 5s
+
 
 # Management properties
 management:

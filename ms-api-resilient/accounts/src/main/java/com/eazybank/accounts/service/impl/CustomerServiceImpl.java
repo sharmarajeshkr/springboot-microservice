@@ -48,13 +48,15 @@ public class CustomerServiceImpl implements ICustomerDetailsService {
 
         // Get Loans Details using Feign Client
         ResponseEntity<LoansDto> loansDtoResponseEntity = loansFeignClient.fetchLoanDetails(correlationId, mobileNumber);
-        // Setting Loans Details to Customer Details
-        customerDetailsDto.setLoansDto(loansDtoResponseEntity.getBody());
-
+        if (loansDtoResponseEntity != null) {
+            // Setting Loans Details to Customer Details
+            customerDetailsDto.setLoansDto(loansDtoResponseEntity.getBody());
+        }
         // Get Cards Details using Feign Client
         ResponseEntity<CardsDto> cardsDtoResponseEntity = cardsFeignClient.fetchCardDetails(correlationId, mobileNumber);
-        customerDetailsDto.setCardsDto(cardsDtoResponseEntity.getBody());
-
+        if (cardsDtoResponseEntity != null) {
+            customerDetailsDto.setCardsDto(cardsDtoResponseEntity.getBody());
+        }
         // Used Aggregator Pattern to collect details from multiple MS
         return customerDetailsDto;
     }

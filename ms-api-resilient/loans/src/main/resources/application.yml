@@ -16,6 +16,23 @@ spring:
       mode: always
   config:
     import: "optional:configserver:http://localhost:8071/"
+  # Configuration for circuitbreaker
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+
+# Resilience4j
+resilience4j.circuitbreaker:
+  configs:
+    # this is default configuration, this will applied to all microservices
+    default:
+      slidingWindowSize: 10 # How many number of request circuit breaker have to monitor before it changes the state
+      permittedNumberOfCallsInHalfOpenState: 2 # Allow 2 request to Half open state
+      waitDurationInOpenState: 10000 # duration in ms = 10 Sec
+      failureRateThreshold: 60 #
+      registerHealthIndicator: true
+
 
 management:
   endpoints:

@@ -25,7 +25,10 @@ Dependency
 	  <artifactId>spring-cloud-starter-circuitbreaker-reactor-resilience4j</artifactId>
    </dependency>
 ```
+Implementation for Gateway Server
 - ![img_4.png](img_4.png)
+Implementation for MicroService 
+- https://docs.spring.io/spring-cloud-openfeign/docs/current/reference/html/#spring-cloud-feign-circuitbreaker
 - ![img_6.png](img_6.png)
 
 ## After Starting all Services in Sequence 

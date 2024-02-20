@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
-@Order(1)
+@Order(-1)
 @Component
 public class RequestTraceFilter implements GlobalFilter {
 
@@ -23,6 +23,7 @@ public class RequestTraceFilter implements GlobalFilter {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+        System.out.println("Filter");
         HttpHeaders requestHeaders = exchange.getRequest().getHeaders();
         if (isCorrelationIdPresent(requestHeaders)) {
             logger.debug("eazyBank-correlation-id found in RequestTraceFilter : {}",

@@ -34,6 +34,15 @@ Implementation for MicroService
 ## HTTP Timeout Configuration
 https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/http-timeouts-configuration.html
 
+## Retry Pattern
+![img_8.png](img_8.png)
+## Retry Pattern Implementation in gateway MS
+![img_7.png](img_7.png)
+
+## Retry Pattern for Normal MS
+![img_10.png](img_10.png)
+![img_9.png](img_9.png)
+
 
 ## After Starting all Services in Sequence 
 - Start Config Server

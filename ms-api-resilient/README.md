@@ -20,10 +20,10 @@
 ## Circuit Breaker Pattern Implementation
 Dependency
 ```shell
-    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
-    </dependency>
+   <dependency>
+	  <groupId>org.springframework.cloud</groupId>
+	  <artifactId>spring-cloud-starter-circuitbreaker-reactor-resilience4j</artifactId>
+   </dependency>
 ```
 - ![img_4.png](img_4.png)
 - ![img_6.png](img_6.png)

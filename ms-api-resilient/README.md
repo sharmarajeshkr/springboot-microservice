@@ -50,6 +50,8 @@ https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/http-
 - Start Microservice once Discovery Server Start
 - Start Gateway Server
 
+![img_11.png](img_11.png)
+
 ## Fetch Customer Details
 ![img_5.png](img_5.png)
 ## All Requests

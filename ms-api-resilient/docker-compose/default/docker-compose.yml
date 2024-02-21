@@ -30,7 +30,7 @@ services:
       service: microservice-db-config
 
   configserver:
-    image: "rajeshsharma9616/configserver:s2"
+    image: "rajeshsharma9616/configserver:ms-resilient"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -45,7 +45,7 @@ services:
       service: microservice-base-config
 
   eurekaserver:
-    image: "rajeshsharma9616/eurekaserver:s2"
+    image: "rajeshsharma9616/eurekaserver:ms-resilient"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -62,7 +62,7 @@ services:
       SPRING_APPLICATION_NAME: "eurekaserver"
 
   accounts:
-    image: "rajeshsharma9616/accounts:s2"
+    image: "rajeshsharma9616/accounts:ms-resilient"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -83,7 +83,7 @@ services:
       service: microservice-eureka-config
 
   loans:
-    image: "rajeshsharma9616/loans:s2"
+    image: "rajeshsharma9616/loans:ms-resilient"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -104,7 +104,7 @@ services:
       service: microservice-eureka-config
 
   cards:
-    image: "rajeshsharma9616/cards:s2"
+    image: "rajeshsharma9616/cards:ms-resilient"
     container_name: cards-ms
     ports:
       - "9000:9000"
@@ -125,7 +125,7 @@ services:
       service: microservice-eureka-config
 
   gatewayserver:
-    image: "rajeshsharma9616/gatewayserver:s2"
+    image: "rajeshsharma9616/gatewayserver:ms-resilient"
     container_name: gatewayserver-ms
     ports:
       - "8072:8072"

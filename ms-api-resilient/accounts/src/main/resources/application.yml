@@ -32,7 +32,7 @@ resilience4j.circuitbreaker:
       waitDurationInOpenState: 10000 # duration in ms = 10 Sec
       failureRateThreshold: 60 #
       registerHealthIndicator: true
-
+# <!-- Actuator -->
 management:
   endpoints:
     web:
@@ -55,7 +55,7 @@ management:
 endpoints:
   shutdown:
     enabled: true
-
+# Eureka Server : Register
 eureka:
   instance:
     preferIpAddress: true

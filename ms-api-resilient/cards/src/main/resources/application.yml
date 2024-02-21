@@ -40,7 +40,7 @@ management:
 endpoints:
   shutdown:
     enabled: true
-
+# Eureka Server : Register
 eureka:
   instance:
     preferIpAddress: true

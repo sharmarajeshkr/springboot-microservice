@@ -81,7 +81,7 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>rajeshsharma9616/${project.artifactId}:s2</image>
+						<image>rajeshsharma9616/${project.artifactId}:ms-resilient</image>
 					</to>
 				</configuration>
 			</plugin>

@@ -2,7 +2,7 @@
 ## Spring Cloud Official Document
 - https://spring.io/projects/spring-cloud-circuitbreaker
 - https://cloud.spring.io/spring-cloud-static/spring-cloud-circuitbreaker/1.0.2.RELEASE/reference/html/
-
+- https://reflectoring.io/retry-with-resilience4j/
 ## Resilience4j Official Document
 - https://resilience4j.readme.io/docs/getting-started-3
 
@@ -35,6 +35,7 @@ Implementation for MicroService
 https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/http-timeouts-configuration.html
 
 ## Retry Pattern
+-- Retry Configuration https://reflectoring.io/retry-with-resilience4j/
 ![img_8.png](img_8.png)
 ## Retry Pattern Implementation in gateway MS
 ![img_7.png](img_7.png)
@@ -54,5 +55,12 @@ https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/http-
 
 ## Fetch Customer Details
 ![img_5.png](img_5.png)
+
+## Starting DB
+```shell
+docker run -p 3306:3306 --name accountsdb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=accountsdb -d mysql
+docker run -p 3307:3306 --name loansdb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=loansdb -d mysql
+docker run -p 3308:3306 --name cardsdb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=cardsdb -d mysql
+```
 ## All Requests
 [Microservices.postman_collection.json](Microservices.postman_collection.json)

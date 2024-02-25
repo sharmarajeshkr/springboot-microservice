@@ -6,6 +6,7 @@ import com.eazybank.accounts.dto.CustomerDto;
 import com.eazybank.accounts.dto.ErrorResponseDto;
 import com.eazybank.accounts.dto.ResponseDto;
 import com.eazybank.accounts.service.IAccountsService;
+import io.github.resilience4j.retry.annotation.Retry;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -14,6 +15,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
+import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -22,6 +24,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
 
 /**
  * @author Eazy Bytes
@@ -36,6 +39,7 @@ import org.springframework.web.bind.annotation.*;
 @Validated
 public class AccountsController {
 
+    Logger logger = LoggerFactory.getLogger(AccountsController.class);
     private final IAccountsService iAccountsService;
 
     public AccountsController(IAccountsService iAccountsService) {
@@ -246,11 +250,23 @@ public class AccountsController {
     }
     )
     @GetMapping("/contact-info")
+    @Retry(name = "retryContactInfo", fallbackMethod = "getContactInfoFallback")
     public ResponseEntity<AccountsContactInfoDto> getContactInfo() {
+        logger.debug("getContactInfo() method Invoked");
+        throw new NullPointerException();
+        /*return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(accountsContactInfoDto);*/
+    }
+
+    public ResponseEntity<AccountsContactInfoDto> getContactInfoFallback(Throwable ex) {
+        logger.debug("getContactInfoFallback() Method : Retry after some time");
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(accountsContactInfoDto);
+                .body(new AccountsContactInfoDto());
     }
+
+
 
 
 }
